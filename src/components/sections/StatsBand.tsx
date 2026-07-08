@@ -13,7 +13,7 @@ export function StatsBand() {
   return (
     <section className="mt-16 sm:mt-20">
       <Container>
-        <Card className="relative overflow-hidden" color="green">
+        <Card className="relative overflow-hidden !rounded-none !rounded-tr-[120px]" color="green">
           <div
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_450px_at_10%_10%,rgba(103,157,65,0.18),transparent_60%),radial-gradient(900px_450px_at_90%_30%,rgba(43,122,75,0.12),transparent_60%)]"
             aria-hidden

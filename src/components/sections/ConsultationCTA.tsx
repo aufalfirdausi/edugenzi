@@ -7,7 +7,7 @@ export function ConsultationCTA() {
   return (
     <section className="mt-16 sm:mt-20">
       <Container>
-        <Card className="relative overflow-hidden" color="amber">
+        <Card className="relative overflow-hidden !rounded-none !rounded-tr-[120px]" color="amber">
           <div
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_20%_30%,rgba(255,176,0,0.12),transparent_60%)]"
             aria-hidden
