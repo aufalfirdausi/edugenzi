@@ -10,9 +10,7 @@ export function SiteFooter() {
         <div className="md:col-span-5">
           <div className="text-lg font-semibold text-[var(--ink)]">Edugenzi</div>
           <p className="mt-3 max-w-prose text-sm leading-relaxed text-[var(--muted)]">
-            Belajar interaktif dan menyenangkan untuk SD–SMP–SMA. Membangun keterampilan
-            digital untuk masa depan: Coding & AI, Desain Grafis & 3D, Robotika & IoT, dan
-            Public Speaking.
+            Belajar interaktif dan menyenangkan untuk anak & remaja. Membangun keterampilan digital dan rasa percaya diri lewat Coding & AI, Desain Grafis & 3D, Robotika & IoT, dan Public Speaking.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             <ButtonLink href={links.consultation} external size="sm">
@@ -54,8 +52,7 @@ export function SiteFooter() {
 
       <div className="border-t border-[rgba(16,20,24,0.08)] py-6">
         <Container className="flex flex-col gap-2 text-xs text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Edugenzi. All rights reserved.</p>
-          <p>Website prototype redesign (Next.js) for Edugenzi.</p>
+          <p>© {new Date().getFullYear()} Edugenzi Academy. All rights reserved.</p>
         </Container>
       </div>
     </footer>

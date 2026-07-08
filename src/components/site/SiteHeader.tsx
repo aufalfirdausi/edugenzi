@@ -1,12 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { links } from "@/lib/links";
 
 const nav = [
   { label: "Program", href: "/#program" },
-  { label: "Journey", href: "/#journey" },
-  { label: "Proyek", href: "/#projects" },
+  { label: "Cara Belajar", href: "/#journey" },
+  { label: "Karya Siswa", href: "/#projects" },
   { label: "Testimoni", href: "/#testimonials" },
   { label: "FAQ", href: "/#faq" },
 ] as const;
@@ -19,9 +20,9 @@ export function SiteHeader() {
           href="/"
           className="flex items-center gap-2 font-semibold tracking-tight"
         >
-          <span className="grid size-9 place-items-center rounded-2xl bg-[var(--surface)] ring-1 ring-[var(--border)] shadow-[var(--shadow-sm)]">
-            <span className="text-[var(--brand)]" aria-hidden>
-              logo
+          <span className="grid size-9 place-items-center rounded-2xl bg-[var(--surface)] ring-1 ring-[var(--border)] shadow-[var(--shadow-sm)] overflow-hidden">
+            <span className="flex items-center justify-center" aria-hidden>
+              <Image src="/favicon.png" alt="Edugenzi logo" width={24} height={24} />
             </span>
           </span>
           <span className="text-[var(--brand)]">
@@ -48,7 +49,7 @@ export function SiteHeader() {
             variant="primary"
             size="sm"
           >
-            WhatsApp Konsultasi
+            Chat via WhatsApp
           </ButtonLink>
         </div>
       </Container>

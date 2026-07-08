@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const stats = [
-  { value: "7–17", label: "Rentang usia siswa" },
+  { value: "12–18", label: "Rentang usia siswa" },
   { value: "4", label: "Program utama" },
   { value: "12–24x", label: "Pertemuan per program" },
   { value: "90 mnt", label: "Durasi per sesi" },
@@ -21,9 +21,9 @@ export function StatsBand() {
           <div className="relative grid gap-10 p-6 sm:p-8 lg:grid-cols-12 lg:items-center">
             <SectionHeading
               className="lg:col-span-4"
-              eyebrow="Success metrics"
-              title="Progres yang terukur, pengalaman yang terasa"
-              description="Angka berikut merangkum struktur belajar Edugenzi. Tambahkan metrik real (jumlah siswa/proyek) untuk trust yang lebih kuat."
+              eyebrow="Sekilas Tentang Edugenzi"
+              title="Belajar yang Terstruktur, Hasil yang Terlihat"
+              description="Struktur belajar Edugenzi dirancang supaya progres anak jelas dari awal sampai akhir program."
             />
 
             <div className="grid gap-4 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">

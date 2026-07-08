@@ -4,7 +4,7 @@ import { links } from "@/lib/links";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-12 sm:pt-16 lg:pt-20">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[var(--bg)] to-white pt-12 sm:pt-16 lg:pt-20">
       <Container className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
         <div className="relative lg:col-span-6">
           <div className="relative overflow-hidden rounded-[calc(var(--radius)+6px)] bg-[var(--surface)] ring-1 ring-[rgba(16,20,24,0.10)] shadow-[var(--shadow-md)]">
@@ -32,22 +32,20 @@ export function Hero() {
               className="size-1.5 rounded-full bg-[var(--brand)]"
               aria-hidden
             />
-            Kursus STEAM untuk usia 7–17 tahun
+            Kursus Teknologi & Kreativitas (Usia 12-18 tahun)
           </div>
 
           <div className="flex flex-col items-center gap-4">
             <h1 className=" mt-5 text-4xl font-extrabold text-[var(--brand)] tracking-tight sm:text-5xl">
               Edu<span className="text-[var(--brand-3)]">genzi</span>{" "}
               <span className="font-[var(--font-display)] text-3xl leading-[1.02] tracking-tight text-[var(--ink)] sm:text-4xl">
-                Belajar Asyik, Cerdas Berkembang
+                Belajar Sambil Berkarya: Coding, Desain, Robotik & Public Speaking
               </span>
             </h1>
           </div>
 
           <p className="mt-4 max-w-prose text-base leading-relaxed text-black sm:text-lg">
-            Edugenzi adalah ruang belajar yang interaktif dan menyenangkan. Anak
-            belajar lewat proyek nyata, dibimbing instruktur profesional, dan
-            progresnya terlihat lewat karya.
+            Edugenzi adalah tempat belajar teknologi yang dirancang lewat metode belajar sambil praktik. Setiap pertemuan, siswa membuat karya nyata — bukan sekadar mengerjakan soal — sehingga progres belajar langsung terlihat.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -64,36 +62,7 @@ export function Hero() {
             </span>
           </p>
 
-          <ul className="mt-8 grid gap-3 text-sm text-[var(--muted)] sm:grid-cols-2">
-            <li className="flex items-start gap-2">
-              <span
-                className="mt-1 size-2 rounded-full bg-[var(--ink)]"
-                aria-hidden
-              />
-              Project-Based Learning (praktik setiap pertemuan)
-            </li>
-            <li className="flex items-start gap-2">
-              <span
-                className="mt-1 size-2 rounded-full bg-[var(--ink)]"
-                aria-hidden
-              />
-              Offline Banda Aceh & kelas online interaktif
-            </li>
-            <li className="flex items-start gap-2">
-              <span
-                className="mt-1 size-2 rounded-full bg-[var(--ink)]"
-                aria-hidden
-              />
-              Materi relevan: Coding, AI, Desain, 3D, Robotika, IoT
-            </li>
-            <li className="flex items-start gap-2">
-              <span
-                className="mt-1 size-2 rounded-full bg-[var(--ink)]"
-                aria-hidden
-              />
-              Sertifikat kompetensi setelah selesai program
-            </li>
-          </ul>
+
         </div>
       </Container>
     </section>

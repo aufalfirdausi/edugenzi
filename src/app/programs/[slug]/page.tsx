@@ -87,8 +87,7 @@ export default async function ProgramPage({ params }: Props) {
                 <div className="relative p-6">
                   <div className="text-sm font-semibold text-[var(--ink)]">Contoh output belajar</div>
                   <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
-                    Gunakan ini sebagai tempat menampilkan karya siswa nyata (foto/screenshot) untuk meningkatkan trust
-                    dan conversion.
+                    Contoh karya yang bisa dihasilkan siswa dalam program ini:
                   </p>
 
                   <div className="mt-5 grid gap-3">
@@ -114,13 +113,12 @@ export default async function ProgramPage({ params }: Props) {
           <SectionHeading
             eyebrow="Ringkasan program"
             title="Yang akan didapat anak dari program ini"
-            description="Susunan ini dibuat untuk membantu orang tua menilai kecocokan program dengan cepat."
+            description="Ringkasan berikut membantu Anda menilai dengan cepat apakah program ini cocok untuk anak."
           />
 
           <div className="mt-8 grid gap-4 lg:grid-cols-12">
             <div className="grid gap-4 lg:col-span-7">
               <BulletCard title="Outcome" items={program.outcomes} />
-              <BulletCard title="Highlight pembelajaran" items={program.highlights} />
             </div>
             <div className="lg:col-span-5">
               <BulletCard title="Cocok untuk" items={program.whoFor} />
@@ -138,7 +136,7 @@ export default async function ProgramPage({ params }: Props) {
                   Masih ragu? Konsultasi dulu biar jelas.
                 </h2>
                 <p className="mt-3 max-w-prose text-sm leading-relaxed text-[var(--muted)] sm:text-base">
-                  Konsultasi membantu menentukan level, jadwal, dan program yang paling sesuai dengan minat anak.
+                  Chat admin kami untuk tahu lebih detail soal level belajar, jadwal, dan biaya — supaya anak mulai dari titik yang paling tepat.
                 </p>
               </div>
               <div className="flex flex-col gap-3 lg:col-span-5 lg:justify-end">

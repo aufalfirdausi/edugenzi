@@ -16,11 +16,9 @@ export function FaqSection() {
           />
 
           <div className="grid gap-3 lg:col-span-8">
-            {faqs.map((item, idx) => {
-              const colors = ["cream", "purple", "green", "amber"] as const;
-              const color = colors[idx % colors.length];
+            {faqs.map((item) => {
               return (
-                <Card key={item.q} className="overflow-hidden" color={color}>
+                <Card key={item.q} className="overflow-hidden" color="purple">
                   <details className="group">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-left sm:p-6">
                       <span className="text-sm font-semibold text-[var(--ink)] sm:text-base">{item.q}</span>

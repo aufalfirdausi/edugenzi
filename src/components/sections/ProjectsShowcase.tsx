@@ -10,9 +10,9 @@ export function ProjectsShowcase() {
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <SectionHeading
             className="lg:col-span-5"
-            eyebrow="Student showcase"
+            eyebrow="Karya Siswa"
             title="Bukti belajar yang nyata: karya & proyek"
-            description="Bagian ini akan jauh lebih kuat jika diisi dengan proyek siswa asli (foto/screenshot + deskripsi singkat)."
+            description="Setiap karya di bawah ini dibuat langsung oleh siswa Edugenzi selama program berjalan."
           />
 
           <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7">

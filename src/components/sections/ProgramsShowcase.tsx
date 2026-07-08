@@ -3,6 +3,12 @@ import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { programs } from "@/content/programs";
+const programImages: Record<string, string> = {
+  "coding-ai": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop",
+  "graphic-design-3d": "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800&auto=format&fit=crop",
+  "robotics-iot": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
+  "public-speaking": "https://images.unsplash.com/photo-1475721025599-fac923df24c5?q=80&w=800&auto=format&fit=crop"
+};
 
 export function ProgramsShowcase() {
   return (
@@ -12,50 +18,41 @@ export function ProgramsShowcase() {
           <SectionHeading
             eyebrow="Program pilihan"
             title="Pilih program sesuai minat & bakat"
-            description="Setiap program dirancang untuk mengembangkan kemampuan masa depan melalui pembelajaran yang seru dan berbasis proyek."
+            description="Setiap program dirancang lewat proyek nyata, supaya siswa tidak cuma paham konsep, tapi juga tahu cara memakainya."
           />
 
-          <div className="grid gap-4 md:grid-cols-2">
-            {programs.map((p, idx) => {
-              const colors = ["cream", "purple", "green", "amber"] as const;
-              const color = colors[idx % colors.length];
+          <div className="grid gap-6 md:grid-cols-2">
+            {programs.map((p) => {
               return (
-                <Card key={p.slug} className="group overflow-hidden" color={color}>
-                  <div className="p-6 sm:p-7">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <div className="text-xs font-semibold text-[var(--muted)]">Program</div>
-                        <h3 className="mt-2 font-[var(--font-display)] text-2xl tracking-tight text-[var(--ink)]">
-                          {p.title}
-                        </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{p.description}</p>
-                      </div>
-                      <div
-                        className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[var(--border)] ring-1 ring-[var(--border)]"
-                        aria-hidden
-                      >
-                        <span className="text-[var(--ink)]">↗</span>
-                      </div>
+                <Card key={p.slug} className="group overflow-hidden flex flex-col h-full" color="green">
+                  {/* Media Header (Image) */}
+                  <div className="relative h-48 sm:h-56 w-full overflow-hidden border-b border-[var(--border)]">
+                    <img 
+                      src={programImages[p.slug]} 
+                      alt={p.title}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Content Body */}
+                  <div className="flex flex-col flex-grow p-6 sm:p-7">
+                    <div className="mb-4">
+                      <div className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">Program</div>
+                      <h3 className="font-[var(--font-display)] text-2xl tracking-tight text-[var(--ink)]">
+                        {p.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] line-clamp-3">
+                        {p.description}
+                      </p>
                     </div>
 
-                    <ul className="mt-5 grid gap-2 text-sm text-[var(--muted)] sm:grid-cols-2">
-                      {p.highlights.slice(0, 4).map((h) => (
-                        <li key={h} className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-[var(--ink)]" aria-hidden />
-                          {h}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <div className="mt-auto pt-5 border-t border-[var(--border)]/50 flex flex-wrap items-center gap-3">
                       <Link
                         href={`/programs/${p.slug}`}
                         className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--ink)] hover:underline"
                       >
-                        Lihat detail program <span aria-hidden>→</span>
+                        Lihat detail program <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
                       </Link>
-                      <span className="text-xs text-[var(--muted)]">•</span>
-                      <span className="text-xs text-[var(--muted)]">{p.tagline}</span>
                     </div>
                   </div>
                   <div

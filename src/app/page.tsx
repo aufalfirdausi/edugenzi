@@ -22,7 +22,7 @@ export default function Home() {
       <ProjectsShowcase />
       <LearningJourney />
       <InstructorCredibility />
-      <ParentTestimonials />
+      {/* <ParentTestimonials /> - Skipped per user request */}
       <ConsultationCTA />
       <FaqSection />
       <FinalCtaBand />

@@ -21,7 +21,7 @@ const steps = [
   {
     n: "4",
     title: "Portofolio & presentasi",
-    desc: "Hasil belajar dikumpulkan jadi portofolio, lalu anak dilatih untuk menjelaskan karyanya dengan percaya diri.",
+    desc: "Anak mempresentasikan hasil karyanya di akhir program, sebagai bukti nyata perkembangan belajarnya.",
   },
 ] as const;
 
@@ -32,17 +32,15 @@ export function LearningJourney() {
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <SectionHeading
             className="lg:col-span-4"
-            eyebrow="Learning journey"
+            eyebrow="Cara Belajar"
             title="Alur belajar yang jelas, progres yang terlihat"
-            description="Pola ini membantu orang tua memahami apa yang akan terjadi dari awal sampai anak punya hasil."
+            description="Supaya orang tua tahu persis apa yang akan dijalani anak, dari awal konsultasi sampai punya karya sendiri."
           />
 
           <div className="grid gap-4 lg:col-span-8">
-            {steps.map((s, idx) => {
-              const colors = ["cream", "purple", "green", "amber"] as const;
-              const color = colors[idx % colors.length];
+            {steps.map((s) => {
               return (
-                <Card key={s.n} className="p-5 sm:p-6" color={color}>
+                <Card key={s.n} className="p-5 sm:p-6" color="amber">
                   <div className="flex items-start gap-4">
                     <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[var(--border)] font-[var(--font-display)] text-2xl text-[var(--ink)] ring-1 ring-[var(--border)]">
                       {s.n}

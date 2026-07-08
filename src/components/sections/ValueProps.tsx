@@ -4,24 +4,39 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const props = [
   {
-    title: "Instruktur Profesional",
-    desc: "Didampingi pengajar profesional di bidang teknologi, desain, dan komunikasi.",
+    title: "Instruktur Berpengalaman",
+    desc: "Bukan cuma jago teknologi — tim kami paham cara mengajar anak & remaja dengan sabar dan menyenangkan.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    )
   },
   {
-    title: "Metode Berbasis Project",
-    desc: "Belajar sambil praktik nyata agar ilmu lebih mudah dipahami.",
+    title: "Belajar Lewat Proyek Nyata",
+    desc: "Setiap pertemuan menghasilkan karya, bukan cuma latihan soal di buku.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+    )
   },
   {
-    title: "Kurikulum Inovatif",
-    desc: "Materi terkini seputar Coding, AI, Desain Grafis, 3D, Robotika, IoT, dan Public Speaking.",
+    title: "Kurikulum yang Terstruktur",
+    desc: "Materi disusun bertahap dari dasar sampai mahir, disesuaikan usia dan kecepatan belajar.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    )
   },
   {
-    title: "Kreativitas & Karakter",
-    desc: "Bukan hanya pintar teknologi, tapi juga percaya diri dan berani tampil.",
+    title: "Kreativitas & Rasa Percaya Diri",
+    desc: "Anak dilatih berani mencoba, berani salah, dan berani tampil menunjukkan karyanya.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M3 5h4"/><path d="M19 17v4"/><path d="M17 19h4"/></svg>
+    )
   },
   {
-    title: "Fasilitas Modern",
-    desc: "Ruang belajar dirancang untuk mendukung suasana interaktif dan menyenangkan.",
+    title: "Fasilitas Belajar yang Nyaman",
+    desc: "Ruang kelas didesain interaktif supaya anak betah dan fokus belajar.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+    )
   },
 ] as const;
 
@@ -33,8 +48,8 @@ export function ValueProps() {
           <SectionHeading
             className="lg:col-span-4"
             eyebrow="Mengapa Edugenzi"
-            title="Ruang tumbuh untuk skill digital & percaya diri"
-            description="Kami percaya setiap anak punya potensi unik yang bisa berkembang maksimal dengan pendampingan yang tepat."
+            title="Bukan Sekadar Les — Ruang Tumbuh untuk Berkarya dan Percaya Diri"
+            description="Kami percaya setiap anak punya potensi yang berbeda. Lewat pendekatan Care, Practice, EAC, dan Digital Portfolio, Edugenzi mendampingi siswa belajar sesuai ritmenya masing-masing — dengan orang tua tetap terlibat di setiap langkah."
           />
 
           <div className="grid gap-4 sm:grid-cols-2 lg:col-span-8">
@@ -54,10 +69,10 @@ export function ValueProps() {
                     </p>
                   </div>
                   <div
-                    className="mt-1 grid size-11 shrink-0 place-items-center rounded-2xl bg-[var(--border)] ring-1 ring-[var(--border)]"
+                    className="mt-1 grid size-11 shrink-0 place-items-center rounded-2xl bg-[var(--border)] ring-1 ring-[var(--border)] text-[var(--ink)]"
                     aria-hidden
                   >
-                    <div className="size-2.5 rounded-full bg-[var(--ink)]" />
+                    {p.icon}
                   </div>
                 </div>
               </Card>

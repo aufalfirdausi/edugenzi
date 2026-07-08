@@ -2,10 +2,10 @@ import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 
 const items = [
-  { title: "Usia 7–17", desc: "SD–SMP–SMA" },
-  { title: "Project-Based", desc: "Belajar lewat karya" },
-  { title: "Online & Offline", desc: "Banda Aceh + remote" },
-  { title: "Trial Class", desc: "Coba dulu, gratis" },
+  { title: "Usia 12–18 tahun", desc: "Jenjang SMP-SMA" },
+  { title: "Belajar Lewat Karya", desc: "Praktik tiap pertemuan" },
+  { title: "Tatap Muka di Banda Aceh", desc: "Kelas online bertahap hadir" },
+  { title: "Konsultasi Gratis", desc: "Tanya dulu sebelum daftar" },
 ] as const;
 
 export function TrustBar() {
