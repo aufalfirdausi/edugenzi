@@ -10,10 +10,12 @@ import { ParentTestimonials } from "@/components/sections/ParentTestimonials";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
+import { OrganicBackground } from "@/components/ui/OrganicBackground";
 
 export default function Home() {
   return (
-    <div className="pb-16">
+    <div className="pb-16 relative">
+      <OrganicBackground />
       <Hero />
       <TrustBar />
       <ValueProps />

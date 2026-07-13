@@ -22,6 +22,7 @@ export function StatsBand() {
             <SectionHeading
               className="lg:col-span-4"
               eyebrow="Sekilas Tentang Edugenzi"
+              color="green"
               title="Belajar yang Terstruktur, Hasil yang Terlihat"
               description="Struktur belajar Edugenzi dirancang supaya progres anak jelas dari awal sampai akhir program."
             />

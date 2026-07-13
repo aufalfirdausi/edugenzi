@@ -10,6 +10,7 @@ export function ProjectsShowcase() {
           <SectionHeading
             className="lg:col-span-5"
             eyebrow="Karya Siswa"
+            color="yellow"
             title="Bukti belajar yang nyata: karya & proyek"
             description="Setiap karya di bawah ini dibuat langsung oleh siswa Edugenzi selama program berjalan."
           />

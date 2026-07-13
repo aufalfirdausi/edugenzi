@@ -31,6 +31,7 @@ export function InstructorCredibility() {
           <SectionHeading
             className="lg:col-span-5"
             eyebrow="Tim Pengajar"
+            color="yellow"
             title="Instruktur yang mendampingi dengan arah yang jelas"
             description="Tim pengajar Edugenzi dipilih bukan hanya karena jago teknologi, tapi karena paham cara mengajar anak & remaja."
           />

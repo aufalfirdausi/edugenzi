@@ -11,6 +11,7 @@ export function FaqSection() {
           <SectionHeading
             className="lg:col-span-4"
             eyebrow="FAQ"
+            color="purple"
             title="Pertanyaan yang sering ditanyakan"
             description="Rangkuman pertanyaan umum seputar program Edugenzi. Jika butuh jawaban spesifik, konsultasi dulu."
           />

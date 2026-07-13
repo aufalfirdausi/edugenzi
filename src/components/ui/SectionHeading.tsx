@@ -1,18 +1,42 @@
 import { cn } from "@/lib/cn";
 
+export type EyebrowColor = "cream" | "green" | "yellow" | "purple";
+
 export function SectionHeading({
   eyebrow,
   title,
   description,
   align = "left",
+  color = "purple",
   className,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   align?: "left" | "center";
+  color?: EyebrowColor;
   className?: string;
 }) {
+  const colorStyles = {
+    purple: {
+      container: "bg-[rgba(109,40,217,0.12)] text-[var(--brand-2)] ring-[rgba(109,40,217,0.2)]",
+      dot: "bg-[var(--brand-2)]"
+    },
+    green: {
+      container: "bg-[rgba(103,157,65,0.12)] text-[var(--brand)] ring-[rgba(103,157,65,0.2)]",
+      dot: "bg-[var(--brand)]"
+    },
+    yellow: {
+      container: "bg-[rgba(255,176,0,0.12)] text-[var(--brand-3)] ring-[rgba(255,176,0,0.2)]",
+      dot: "bg-[var(--brand-3)]"
+    },
+    cream: {
+      container: "bg-[var(--border)] text-[var(--ink)] ring-[var(--border)]",
+      dot: "bg-[var(--ink)]"
+    }
+  };
+  const selectedColor = colorStyles[color] || colorStyles.purple;
+
   return (
     <div
       className={cn(
@@ -22,10 +46,10 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <div className="inline-flex items-center gap-2 rounded-full bg-[rgba(109,40,217,0.12)] px-3 py-1 text-xs font-semibold text-[var(--brand-2)] ring-1 ring-[rgba(109,40,217,0.2)]">
+        <div className={cn("inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1", selectedColor.container)}>
           <span
             aria-hidden
-            className="size-1.5 rounded-full bg-[var(--brand-2)]"
+            className={cn("size-1.5 rounded-full", selectedColor.dot)}
           />
           {eyebrow}
         </div>

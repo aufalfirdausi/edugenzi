@@ -48,6 +48,7 @@ export function ValueProps() {
           <SectionHeading
             className="lg:col-span-4"
             eyebrow="Mengapa Edugenzi"
+            color="cream"
             title="Bukan Sekadar Les — Ruang Tumbuh untuk Berkarya dan Percaya Diri"
             description="Kami percaya setiap anak punya potensi yang berbeda. Lewat pendekatan Care, Practice, EAC, dan Digital Portfolio, Edugenzi mendampingi siswa belajar sesuai ritmenya masing-masing — dengan orang tua tetap terlibat di setiap langkah."
           />

@@ -33,6 +33,7 @@ export function LearningJourney() {
           <SectionHeading
             className="lg:col-span-4"
             eyebrow="Cara Belajar"
+            color="yellow"
             title="Alur belajar yang jelas, progres yang terlihat"
             description="Supaya orang tua tahu persis apa yang akan dijalani anak, dari awal konsultasi sampai punya karya sendiri."
           />
