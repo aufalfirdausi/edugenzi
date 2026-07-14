@@ -9,16 +9,16 @@ export function ConsultationCTA() {
     <section className="mt-24 lg:mt-32">
       <Container>
         <ScrollReveal direction="up">
-          <Card className="relative overflow-hidden !rounded-none !rounded-tr-[120px]" color="amber">
+          <Card className="relative overflow-hidden !rounded-none !rounded-tr-[120px]" color="purple">
             <div
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_20%_30%,rgba(255,176,0,0.12),transparent_60%)]"
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_20%_30%,rgba(109,40,217,0.12),transparent_60%)]"
               aria-hidden
             />
             <div className="relative grid gap-8 p-6 sm:p-10 lg:grid-cols-12 lg:items-center">
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full bg-[var(--border)] px-3 py-1 text-xs font-semibold text-[var(--ink)] ring-1 ring-[var(--border)]">
+                <div className="inline-flex items-center gap-2 rounded-full bg-purple-100/80 px-3 py-1 text-xs font-semibold text-purple-800 border border-purple-200/40">
                   <span
-                    className="size-1.5 rounded-full bg-[var(--ink)]"
+                    className="size-1.5 rounded-full bg-purple-800"
                     aria-hidden
                   />
                   Konsultasi untuk orang tua

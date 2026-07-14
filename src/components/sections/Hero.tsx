@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { links } from "@/lib/links";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -45,16 +46,18 @@ export function Hero() {
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_450px_at_20%_10%,rgba(34,197,94,0.15),transparent_55%),radial-gradient(700px_450px_at_80%_30%,rgba(109,40,217,0.12),transparent_55%),radial-gradient(600px_300px_at_60%_80%,rgba(234,179,8,0.10),transparent_55%)]"
               aria-hidden
             />
-            <img
+            <Image
               src="/mascot.jpg"
               alt="Edugenzi Mascot"
-              className="relative w-full object-cover aspect-[4/3] mix-blend-multiply"
+              width={800}
+              height={600}
+              priority
+              className="relative w-full h-auto object-cover aspect-[4/3] mix-blend-multiply"
             />
           </div>
 
           <div
-            className="pointer-events-none absolute -left-14 -top-14 hidden size-40 rounded-full bg-[var(--brand-2)] opacity-30 blur-[60px] lg:block animate-morph"
-            style={{ animationDuration: '12s' }}
+            className="pointer-events-none absolute -left-14 -top-14 hidden size-40 rounded-full bg-[var(--brand-2)] opacity-30 blur-[60px] lg:block motion-safe:animate-morph [animation-duration:12s]"
             aria-hidden
           />
         </ScrollReveal>

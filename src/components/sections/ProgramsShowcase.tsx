@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { programs } from "@/content/programs";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import Image from "next/image";
 
 const programImages: Record<string, string> = {
   "coding-ai": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop",
@@ -20,7 +21,7 @@ export function ProgramsShowcase() {
           <ScrollReveal direction="left">
             <SectionHeading
               eyebrow="Program pilihan"
-              color="green"
+              color="yellow"
               title="Pilih program sesuai minat & bakat"
               description="Setiap program dirancang lewat proyek nyata, supaya siswa tidak cuma paham konsep, tapi juga tahu cara memakainya."
             />
@@ -28,14 +29,12 @@ export function ProgramsShowcase() {
 
           <div className="grid gap-6 md:grid-cols-2">
             {programs.map((p, idx) => {
-              const colors = ["green", "purple", "amber", "cream"] as const;
+              const colors = ["amber", "cream"] as const;
               const color = colors[idx % colors.length];
               
               const textColors = {
-                green: "text-[var(--brand)]",
-                purple: "text-[var(--brand-2)]",
-                amber: "text-[var(--brand-3)]",
-                cream: "text-[var(--ink)]"
+                amber: "text-amber-600",
+                cream: "text-amber-700"
               };
               const accentText = textColors[color];
 
@@ -48,10 +47,12 @@ export function ProgramsShowcase() {
                   <Card className="group overflow-hidden flex flex-col h-full" color={color}>
                     {/* Media Header (Image) */}
                     <div className="relative h-48 sm:h-56 w-full overflow-hidden border-b border-[var(--border)]">
-                      <img 
-                        src={programImages[p.slug]} 
+                      <Image 
+                        src={programImages[p.slug]}
                         alt={p.title}
-                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
                       />
                     </div>
 

@@ -20,6 +20,13 @@ export function ScrollReveal({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Respect prefers-reduced-motion
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mediaQuery.matches) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
@@ -48,12 +55,12 @@ export function ScrollReveal({
     <div
       ref={ref}
       className={cn(
-        "transition-all duration-500 ease-out",
-        "will-change-transform",
+        "duration-500 ease-out",
+        "[transition-property:transform,opacity]",
         isVisible ? "opacity-100 translate-x-0 translate-y-0" : `opacity-0 ${directionClasses[direction]}`,
         className
       )}
-      style={{ transitionDelay: `${delay}ms`, willChange: "transform, opacity" }}
+      style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>

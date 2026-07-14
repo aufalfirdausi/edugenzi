@@ -15,7 +15,7 @@ export function StatsBand() {
     <section className="mt-24 lg:mt-32">
       <Container>
         <ScrollReveal direction="up">
-          <Card className="relative overflow-hidden !rounded-none !rounded-tr-[120px]" color="green">
+          <Card className="relative overflow-hidden !rounded-none !rounded-tr-[120px]" color="amber">
             <div
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_450px_at_10%_10%,rgba(103,157,65,0.18),transparent_60%),radial-gradient(900px_450px_at_90%_30%,rgba(43,122,75,0.12),transparent_60%)]"
               aria-hidden
@@ -24,7 +24,7 @@ export function StatsBand() {
               <div className="lg:col-span-4">
                 <SectionHeading
                   eyebrow="Sekilas Tentang Edugenzi"
-                  color="green"
+                  color="yellow"
                   title="Belajar yang Terstruktur, Hasil yang Terlihat"
                   description="Struktur belajar Edugenzi dirancang supaya progres anak jelas dari awal sampai akhir program."
                 />

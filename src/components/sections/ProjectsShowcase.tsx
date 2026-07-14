@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { projects } from "@/content/projects";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Card } from "@/components/ui/Card";
 
 export function ProjectsShowcase() {
   return (
@@ -12,7 +13,7 @@ export function ProjectsShowcase() {
             <ScrollReveal direction="left">
               <SectionHeading
                 eyebrow="Karya Siswa"
-                color="yellow"
+                color="green"
                 title="Bukti belajar yang nyata: karya & proyek"
                 description="Setiap karya di bawah ini dibuat langsung oleh siswa Edugenzi selama program berjalan."
               />
@@ -27,13 +28,14 @@ export function ProjectsShowcase() {
                 delay={idx * 100}
                 className="h-full"
               >
-                <div 
-                  className="rounded-[var(--radius)] bg-white p-5 sm:p-6 border-t-[3px] border-t-[var(--brand-3)] ring-1 ring-[var(--border)] shadow-[var(--shadow-sm)] transition-all duration-200 h-full"
+                <Card 
+                  color="green"
+                  className="p-5 sm:p-6 border-t-[3px] border-t-emerald-500 h-full flex flex-col"
                 >
                   <div className="text-xs font-semibold text-[var(--muted)]">{p.program}</div>
                   <div className="mt-2 text-base font-semibold text-[var(--ink)]">{p.title}</div>
                   <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{p.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-auto pt-4 flex flex-wrap gap-2">
                     {p.tags.map((t) => (
                       <span
                         key={t}
@@ -43,7 +45,7 @@ export function ProjectsShowcase() {
                       </span>
                     ))}
                   </div>
-                </div>
+                </Card>
               </ScrollReveal>
             ))}
           </div>

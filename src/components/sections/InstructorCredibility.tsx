@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import Image from "next/image";
 
 const instructors = [
   {
@@ -33,7 +34,7 @@ export function InstructorCredibility() {
             <ScrollReveal direction="left">
               <SectionHeading
                 eyebrow="Tim Pengajar"
-                color="yellow"
+                color="purple"
                 title="Instruktur yang mendampingi dengan arah yang jelas"
                 description="Tim pengajar Edugenzi dipilih bukan hanya karena jago teknologi, tapi karena paham cara mengajar anak & remaja."
               />
@@ -48,7 +49,7 @@ export function InstructorCredibility() {
                   direction={idx % 2 === 0 ? "left" : "right"}
                   delay={idx * 100}
                 >
-                  <Card className="p-5 sm:p-6" color="amber">
+                  <Card className="p-5 sm:p-6" color="purple">
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <div className="text-base font-semibold text-[var(--ink)]">{i.name}</div>
@@ -56,9 +57,11 @@ export function InstructorCredibility() {
                           {i.role}
                         </div>
                       </div>
-                      <img
+                      <Image
                         src={i.image}
                         alt={i.name}
+                        width={44}
+                        height={44}
                         className="size-11 shrink-0 rounded-2xl object-cover ring-1 ring-[var(--border)]"
                       />
                     </div>

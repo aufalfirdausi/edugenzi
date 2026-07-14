@@ -19,20 +19,20 @@ export function SectionHeading({
 }) {
   const colorStyles = {
     purple: {
-      container: "bg-[rgba(109,40,217,0.12)] text-[var(--brand-2)] ring-[rgba(109,40,217,0.2)]",
-      dot: "bg-[var(--brand-2)]"
+      container: "bg-purple-100/80 text-purple-800 border border-purple-200/40",
+      dot: "bg-purple-800"
     },
     green: {
-      container: "bg-[rgba(103,157,65,0.12)] text-[var(--brand)] ring-[rgba(103,157,65,0.2)]",
-      dot: "bg-[var(--brand)]"
+      container: "bg-emerald-100/80 text-emerald-800 border border-emerald-200/40",
+      dot: "bg-emerald-800"
     },
     yellow: {
-      container: "bg-[rgba(255,176,0,0.12)] text-[var(--brand-3)] ring-[rgba(255,176,0,0.2)]",
-      dot: "bg-[var(--brand-3)]"
+      container: "bg-amber-100/80 text-amber-800 border border-amber-200/40",
+      dot: "bg-amber-800"
     },
     cream: {
-      container: "bg-[var(--border)] text-[var(--ink)] ring-[var(--border)]",
-      dot: "bg-[var(--ink)]"
+      container: "bg-amber-100/80 text-amber-800 border border-amber-200/40",
+      dot: "bg-amber-800"
     }
   };
   const selectedColor = colorStyles[color] || colorStyles.purple;
@@ -46,7 +46,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <div className={cn("inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1", selectedColor.container)}>
+        <div className={cn("inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold", selectedColor.container)}>
           <span
             aria-hidden
             className={cn("size-1.5 rounded-full", selectedColor.dot)}

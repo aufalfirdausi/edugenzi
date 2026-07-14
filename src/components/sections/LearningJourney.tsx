@@ -35,7 +35,7 @@ export function LearningJourney() {
             <ScrollReveal direction="left">
               <SectionHeading
                 eyebrow="Cara Belajar"
-                color="yellow"
+                color="green"
                 title="Alur belajar yang jelas, progres yang terlihat"
                 description="Supaya orang tua tahu persis apa yang akan dijalani anak, dari awal konsultasi sampai punya karya sendiri."
               />
@@ -50,7 +50,7 @@ export function LearningJourney() {
                   direction={idx % 2 === 0 ? "left" : "right"}
                   delay={idx * 100}
                 >
-                  <Card className="p-5 sm:p-6" color="amber">
+                  <Card className="p-5 sm:p-6" color="green">
                     <div className="flex items-start gap-4">
                       <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[var(--border)] font-[var(--font-display)] text-2xl text-[var(--ink)] ring-1 ring-[var(--border)]">
                         {s.n}

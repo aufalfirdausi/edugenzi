@@ -41,10 +41,10 @@ export function SiteFooter() {
             Samping DIY Lingke, Jl. Teuku Nyak Arief, Jeulingke, Kec. Syiah Kuala, Kota Banda
             Aceh, Aceh 23126
           </p>
-          <a className="hover:text-[var(--ink)]" href={links.whatsapp} target="_blank" rel="noreferrer">
+          <a className="hover:text-[var(--ink)]" href={links.whatsapp} target="_blank" rel="noopener noreferrer">
             WhatsApp: {links.whatsappNumberDisplay}
           </a>
-          <a className="hover:text-[var(--ink)]" href={links.instagram} target="_blank" rel="noreferrer">
+          <a className="hover:text-[var(--ink)]" href={links.instagram} target="_blank" rel="noopener noreferrer">
             Instagram: @edugenzi
           </a>
         </div>

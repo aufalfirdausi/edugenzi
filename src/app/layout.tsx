@@ -34,6 +34,14 @@ export const metadata: Metadata = {
     siteName: "Edugenzi",
     locale: "id_ID",
     type: "website",
+    images: [
+      {
+        url: "/logo-edugenzi.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Edugenzi Logo",
+      },
+    ],
   },
 };
 

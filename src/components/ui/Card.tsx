@@ -13,9 +13,9 @@ export function Card({
 }) {
   const hoverStyles = {
     cream: "hover:border-amber-300",
-    purple: "hover:border-[var(--brand-2)]",
-    green: "hover:border-[var(--brand)]",
-    amber: "hover:border-[var(--brand-3)]",
+    purple: "hover:border-purple-400",
+    green: "hover:border-emerald-500",
+    amber: "hover:border-amber-300",
   };
 
   const hoverAccent = hoverStyles[color] || hoverStyles.cream;
