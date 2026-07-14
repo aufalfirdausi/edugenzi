@@ -6,10 +6,8 @@ import { ProgramsShowcase } from "@/components/sections/ProgramsShowcase";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 import { LearningJourney } from "@/components/sections/LearningJourney";
 import { InstructorCredibility } from "@/components/sections/InstructorCredibility";
-import { ParentTestimonials } from "@/components/sections/ParentTestimonials";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { FaqSection } from "@/components/sections/FaqSection";
-import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
 import { OrganicBackground } from "@/components/ui/OrganicBackground";
 
 export default function Home() {
@@ -24,10 +22,8 @@ export default function Home() {
       <ProjectsShowcase />
       <LearningJourney />
       <InstructorCredibility />
-      {/* <ParentTestimonials /> - Skipped per user request */}
       <ConsultationCTA />
       <FaqSection />
-      <FinalCtaBand />
     </div>
   );
 }

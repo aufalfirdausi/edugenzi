@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const props = [
   {
@@ -42,41 +43,51 @@ const props = [
 
 export function ValueProps() {
   return (
-    <section className="mt-16 sm:mt-20">
+    <section className="mt-24 lg:mt-32">
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-          <SectionHeading
-            className="lg:col-span-4"
-            eyebrow="Mengapa Edugenzi"
-            color="cream"
-            title="Bukan Sekadar Les — Ruang Tumbuh untuk Berkarya dan Percaya Diri"
-            description="Kami percaya setiap anak punya potensi yang berbeda. Lewat pendekatan Care, Practice, EAC, dan Digital Portfolio, Edugenzi mendampingi siswa belajar sesuai ritmenya masing-masing — dengan orang tua tetap terlibat di setiap langkah."
-          />
+          <div className="lg:col-span-4">
+            <ScrollReveal direction="left">
+              <SectionHeading
+                eyebrow="Mengapa Edugenzi"
+                color="cream"
+                title="Bukan Sekadar Les — Ruang Tumbuh untuk Berkarya dan Percaya Diri"
+                description="Kami percaya setiap anak punya potensi yang berbeda. Lewat pendekatan Care, Practice, EAC, dan Digital Portfolio, Edugenzi mendampingi siswa belajar sesuai ritmenya masing-masing — dengan orang tua tetap terlibat di setiap langkah."
+              />
+            </ScrollReveal>
+          </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:col-span-8">
-            {props.map((p) => (
-              <Card key={p.title} className="relative overflow-hidden p-5 sm:p-6" color="cream">
-                <div
-                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(400px_200px_at_80%_20%,rgba(255,248,220,0.8),transparent_60%)]"
-                  aria-hidden
-                />
-                <div className="relative flex items-start justify-between gap-3">
-                  <div>
-                    <div className="text-base font-semibold text-[var(--ink)]">
-                      {p.title}
-                    </div>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
-                      {p.desc}
-                    </p>
-                  </div>
+            {props.map((p, idx) => (
+              <ScrollReveal 
+                key={p.title} 
+                direction={idx % 2 === 0 ? "left" : "right"} 
+                className={idx === 4 ? "sm:col-span-2" : ""}
+                delay={idx * 100}
+              >
+                <Card className="relative overflow-hidden p-5 sm:p-6 h-full" color="cream">
                   <div
-                    className="mt-1 grid size-11 shrink-0 place-items-center rounded-2xl bg-[var(--border)] ring-1 ring-[var(--border)] text-[var(--ink)]"
+                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(400px_200px_at_80%_20%,rgba(255,248,220,0.8),transparent_60%)]"
                     aria-hidden
-                  >
-                    {p.icon}
+                  />
+                  <div className="relative flex items-start justify-between gap-3">
+                    <div>
+                      <div className="text-base font-semibold text-[var(--ink)]">
+                        {p.title}
+                      </div>
+                      <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
+                        {p.desc}
+                      </p>
+                    </div>
+                    <div
+                      className="mt-1 grid size-11 shrink-0 place-items-center rounded-2xl bg-[var(--border)] ring-1 ring-[var(--border)] text-[var(--ink)]"
+                      aria-hidden
+                    >
+                      {p.icon}
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
         </div>

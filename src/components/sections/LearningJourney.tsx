@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const steps = [
   {
@@ -30,28 +31,37 @@ export function LearningJourney() {
     <section id="journey" className="mt-16 scroll-mt-24 sm:mt-20">
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-          <SectionHeading
-            className="lg:col-span-4"
-            eyebrow="Cara Belajar"
-            color="yellow"
-            title="Alur belajar yang jelas, progres yang terlihat"
-            description="Supaya orang tua tahu persis apa yang akan dijalani anak, dari awal konsultasi sampai punya karya sendiri."
-          />
+          <div className="lg:col-span-4">
+            <ScrollReveal direction="left">
+              <SectionHeading
+                eyebrow="Cara Belajar"
+                color="yellow"
+                title="Alur belajar yang jelas, progres yang terlihat"
+                description="Supaya orang tua tahu persis apa yang akan dijalani anak, dari awal konsultasi sampai punya karya sendiri."
+              />
+            </ScrollReveal>
+          </div>
 
           <div className="grid gap-4 lg:col-span-8">
-            {steps.map((s) => {
+            {steps.map((s, idx) => {
               return (
-                <Card key={s.n} className="p-5 sm:p-6" color="amber">
-                  <div className="flex items-start gap-4">
-                    <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[var(--border)] font-[var(--font-display)] text-2xl text-[var(--ink)] ring-1 ring-[var(--border)]">
-                      {s.n}
+                <ScrollReveal 
+                  key={s.n} 
+                  direction={idx % 2 === 0 ? "left" : "right"}
+                  delay={idx * 100}
+                >
+                  <Card className="p-5 sm:p-6" color="amber">
+                    <div className="flex items-start gap-4">
+                      <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[var(--border)] font-[var(--font-display)] text-2xl text-[var(--ink)] ring-1 ring-[var(--border)]">
+                        {s.n}
+                      </div>
+                      <div>
+                        <div className="text-base font-semibold text-[var(--ink)]">{s.title}</div>
+                        <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{s.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <div className="text-base font-semibold text-[var(--ink)]">{s.title}</div>
-                      <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{s.desc}</p>
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+                </ScrollReveal>
               );
             })}
           </div>
