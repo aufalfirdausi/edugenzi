@@ -9,6 +9,7 @@ export function SectionHeading({
   align = "left",
   color = "purple",
   className,
+  titleClassName,
 }: {
   eyebrow?: string;
   title: string;
@@ -16,6 +17,7 @@ export function SectionHeading({
   align?: "left" | "center";
   color?: EyebrowColor;
   className?: string;
+  titleClassName?: string;
 }) {
   const colorStyles = {
     purple: {
@@ -59,6 +61,7 @@ export function SectionHeading({
         className={cn(
           "mt-4 font-[var(--font-display)] text-3xl leading-[1.05] tracking-tight text-[var(--ink)] sm:text-4xl",
           align === "center" ? "text-balance" : "text-pretty",
+          titleClassName,
         )}
       >
         {title}

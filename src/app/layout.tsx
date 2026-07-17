@@ -20,6 +20,7 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://edugenzi.com"),
+  // keywords: [SEO (tanyain mas apa yang harus diisi di sini)],`
   title: {
     default: "Edugenzi | Kursus Teknologi untuk Anak & Remaja",
     template: "%s | Edugenzi",
@@ -34,14 +35,6 @@ export const metadata: Metadata = {
     siteName: "Edugenzi",
     locale: "id_ID",
     type: "website",
-    images: [
-      {
-        url: "/logo-edugenzi.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Edugenzi Logo",
-      },
-    ],
   },
 };
 

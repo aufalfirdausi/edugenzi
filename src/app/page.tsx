@@ -3,6 +3,7 @@ import { TrustBar } from "@/components/sections/TrustBar";
 import { ValueProps } from "@/components/sections/ValueProps";
 import { StatsBand } from "@/components/sections/StatsBand";
 import { ProgramsShowcase } from "@/components/sections/ProgramsShowcase";
+import { LearningMethods } from "@/components/sections/LearningMethods";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 import { LearningJourney } from "@/components/sections/LearningJourney";
 import { InstructorCredibility } from "@/components/sections/InstructorCredibility";
@@ -19,6 +20,7 @@ export default function Home() {
       <ValueProps />
       <StatsBand />
       <ProgramsShowcase />
+      <LearningMethods />
       <ProjectsShowcase />
       <LearningJourney />
       <InstructorCredibility />

@@ -15,13 +15,13 @@ export function Hero() {
               className="size-1.5 rounded-full bg-[var(--brand)]"
               aria-hidden
             />
-            Kursus Teknologi & Kreativitas (Usia 12-18 tahun)
+            Kursus Teknologi & Kreativitas (Usia 6-18 tahun)
           </div>
 
           <div className="flex flex-col items-center gap-4 lg:items-start text-center lg:text-left">
             <h1 className=" mt-5 text-4xl font-extrabold text-[var(--brand)] tracking-tight sm:text-5xl drop-shadow-[0_4px_16px_rgba(255,255,255,1)]">
               Edu<span className="text-[var(--brand-3)]">genzi</span>{" "}
-              <span className="font-[var(--font-display)] text-3xl leading-[1.02] tracking-tight text-[var(--ink)] sm:text-4xl block mt-2">
+              <span className="font-[var(--font-display)] text-3xl leading-snug tracking-tight text-[var(--ink)] sm:text-4xl block mt-2">
                 Belajar Sambil Berkarya: Coding, Desain, Robotik & Public Speaking
               </span>
             </h1>

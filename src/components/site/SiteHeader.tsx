@@ -10,6 +10,7 @@ const nav = [
   { label: "Karya Siswa", href: "/#projects" },
   { label: "Testimoni", href: "/#testimonials" },
   { label: "FAQ", href: "/#faq" },
+  { label: "Tentang Kami", href: "/tentang-kami" }
 ] as const;
 
 export function SiteHeader() {
