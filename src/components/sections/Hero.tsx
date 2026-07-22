@@ -10,13 +10,6 @@ export function Hero() {
       <Container className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
         {/* Text Content (Moved to Right) */}
         <ScrollReveal direction="left" className="lg:col-span-6 order-2 lg:order-2">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[rgba(16,20,24,0.06)] px-3 py-1 text-xs font-semibold text-[var(--muted)] ring-1 ring-[rgba(16,20,24,0.08)]">
-            <span
-              className="size-1.5 rounded-full bg-[var(--brand)]"
-              aria-hidden
-            />
-            Kursus Teknologi & Kreativitas (Usia 6-18 tahun)
-          </div>
 
           <div className="flex flex-col items-center gap-4 lg:items-start text-center lg:text-left">
             <h1 className=" mt-5 text-4xl font-extrabold text-[var(--brand)] tracking-tight sm:text-5xl drop-shadow-[0_4px_16px_rgba(255,255,255,1)]">

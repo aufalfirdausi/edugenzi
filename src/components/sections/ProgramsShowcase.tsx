@@ -36,7 +36,7 @@ export function ProgramsShowcase() {
                 className="h-full"
               >
                 <Card className="group flex flex-col h-full p-6 sm:p-7" color="amber">
-                  <div className="mb-6 inline-flex items-center justify-center size-14 rounded-2xl bg-amber-50 text-amber-600 ring-1 ring-amber-100 transition-colors group-hover:bg-amber-100">
+                  <div className="mb-6 inline-flex items-center justify-center size-14 rounded-2xl bg-[var(--brand-3)]/10 text-[var(--brand-3)] ring-1 ring-[var(--brand-3)]/20 transition-colors group-hover:bg-[var(--brand-3)]/20">
                     {programIcons[p.slug]}
                   </div>
 
@@ -53,7 +53,7 @@ export function ProgramsShowcase() {
                     <div className="mt-auto pt-5 border-t border-[var(--border)]/50 flex flex-wrap items-center gap-3">
                       <Link
                         href={`/programs/${p.slug}`}
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:underline"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-3)] hover:underline"
                       >
                         Lihat detail <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
                       </Link>

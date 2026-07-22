@@ -52,7 +52,7 @@ export function ValueProps() {
                 eyebrow="Mengapa Edugenzi"
                 color="yellow"
                 title="Bukan sekedar kursus. Tapi ruang tumbuh untuk berkarya dan percaya diri"
-                titleClassName="text-[#ffb000]"
+                titleClassName="!text-[#ffb000]"
                 description="Kami percaya setiap anak punya potensi yang berbeda. Lewat pendekatan Care, Practice, EAC, dan Digital Portfolio, Edugenzi mendampingi siswa belajar sesuai ritmenya masing-masing — dengan orang tua tetap terlibat di setiap langkah."
               />
             </ScrollReveal>

@@ -13,7 +13,7 @@ export type Program = {
 export const programs: Program[] = [
   {
     slug: "graphic-design-3d",
-    title: "Desain Grafis & 3D",
+    title: "Design 3D",
     shortTitle: "Design & 3D",
     tagline: "Dari coretan ide sampai karya visual yang bisa dipamerkan — untuk anak SD sampai remaja SMA.",
     description:

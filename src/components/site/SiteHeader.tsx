@@ -8,9 +8,7 @@ const nav = [
   { label: "Program", href: "/#program" },
   { label: "Cara Belajar", href: "/#journey" },
   { label: "Karya Siswa", href: "/#projects" },
-  { label: "Testimoni", href: "/#testimonials" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Tentang Kami", href: "/tentang-kami" }
 ] as const;
 
 export function SiteHeader() {

@@ -16,9 +16,9 @@ export function ConsultationCTA() {
             />
             <div className="relative grid gap-8 p-6 sm:p-10 lg:grid-cols-12 lg:items-center">
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full bg-purple-100/80 px-3 py-1 text-xs font-semibold text-purple-800 border border-purple-200/40">
+                <div className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-2)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand-2)] border border-[var(--brand-2)]/40">
                   <span
-                    className="size-1.5 rounded-full bg-purple-800"
+                    className="size-1.5 rounded-full bg-[var(--brand-2)]"
                     aria-hidden
                   />
                   Konsultasi untuk orang tua

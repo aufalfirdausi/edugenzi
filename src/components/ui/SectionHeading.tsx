@@ -21,20 +21,20 @@ export function SectionHeading({
 }) {
   const colorStyles = {
     purple: {
-      container: "bg-purple-100/80 text-purple-800 border border-purple-200/40",
-      dot: "bg-purple-800"
+      container: "bg-[var(--brand-2)]/10 text-[var(--brand-2)] border border-[var(--brand-2)]/40",
+      dot: "bg-[var(--brand-2)]"
     },
     green: {
-      container: "bg-emerald-100/80 text-emerald-800 border border-emerald-200/40",
-      dot: "bg-emerald-800"
+      container: "bg-[var(--brand)]/10 text-[var(--brand)] border border-[var(--brand)]/40",
+      dot: "bg-[var(--brand)]"
     },
     yellow: {
-      container: "bg-amber-100/80 text-amber-800 border border-amber-200/40",
-      dot: "bg-amber-800"
+      container: "bg-[var(--brand-3)]/10 text-[var(--brand-3)] border border-[var(--brand-3)]/40",
+      dot: "bg-[var(--brand-3)]"
     },
     cream: {
-      container: "bg-amber-100/80 text-amber-800 border border-amber-200/40",
-      dot: "bg-amber-800"
+      container: "bg-[var(--brand-3)]/10 text-[var(--brand-3)] border border-[var(--brand-3)]/40",
+      dot: "bg-[var(--brand-3)]"
     }
   };
   const selectedColor = colorStyles[color] || colorStyles.purple;
