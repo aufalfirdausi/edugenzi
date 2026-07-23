@@ -8,6 +8,7 @@ const nav = [
   { label: "Program", href: "/#program" },
   { label: "Cara Belajar", href: "/#journey" },
   { label: "Karya Siswa", href: "/#projects" },
+  { label: "Tentang Kami", href: "/tentang-kami" },
   { label: "FAQ", href: "/#faq" },
 ] as const;
 

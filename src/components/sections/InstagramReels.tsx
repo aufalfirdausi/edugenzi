@@ -38,7 +38,62 @@ const MOCK_REELS = [
   }
 ];
 
-export function InstagramReels() {
+// Fallback interface representing the Behold response structure
+interface BeholdPost {
+  id: string;
+  mediaUrl: string;
+  thumbnailUrl?: string;
+  permalink: string;
+  caption: string;
+  mediaType: "IMAGE" | "VIDEO" | "CAROUSEL_ALBUM";
+  sizes?: {
+    large?: { mediaUrl: string };
+    medium?: { mediaUrl: string };
+  };
+}
+
+async function getReelsData() {
+  const url = process.env.NEXT_PUBLIC_BEHOLD_URL;
+  if (!url) return null;
+
+  try {
+    const res = await fetch(url, { next: { revalidate: 86400 } });
+    if (!res.ok) return null;
+    const data = await res.json();
+    
+    // Ensure we have an array
+    if (Array.isArray(data)) return data as BeholdPost[];
+    if (data.posts && Array.isArray(data.posts)) return data.posts as BeholdPost[];
+    
+    return null;
+  } catch (error) {
+    console.error("Failed to fetch Behold Instagram feed:", error);
+    return null;
+  }
+}
+
+export async function InstagramReels() {
+  const fetchedData = await getReelsData();
+  
+  // Transform or fallback
+  const reels = fetchedData ? fetchedData.slice(0, 5).map(item => {
+    // If it's a video, we must use thumbnailUrl so we get a static cover instead of an mp4 file.
+    let resolvedMediaUrl = item.mediaUrl;
+    if (item.mediaType === "VIDEO" && item.thumbnailUrl) {
+      resolvedMediaUrl = item.thumbnailUrl;
+    } else if (item.sizes?.large?.mediaUrl) {
+      resolvedMediaUrl = item.sizes.large.mediaUrl;
+    }
+
+    return {
+      id: item.id,
+      mediaUrl: resolvedMediaUrl,
+      caption: item.caption || "",
+      permalink: item.permalink || "https://instagram.com/edugenzi",
+      isVideo: item.mediaType === "VIDEO"
+    };
+  }) : MOCK_REELS.map(r => ({ ...r, isVideo: true })); // default mock to true for UI play icons
+
   return (
     <section id="projects" className="mt-16 scroll-mt-24 sm:mt-20">
       <Container>
@@ -55,14 +110,14 @@ export function InstagramReels() {
         <div className="relative">
           {/* Mobile Snap & Desktop Flex */}
           <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pb-8 px-4 -mx-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3 lg:flex lg:justify-center">
-            {MOCK_REELS.map((reel, idx) => (
-              <ScrollReveal 
-                key={reel.id} 
-                direction="up" 
+            {reels.map((reel, idx) => (
+              <ScrollReveal
+                key={reel.id}
+                direction="up"
                 delay={idx * 100}
                 className="snap-center shrink-0 w-[240px] sm:w-auto sm:shrink lg:flex-1 lg:max-w-[260px]"
               >
-                <a 
+                <a
                   href={reel.permalink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -74,12 +129,14 @@ export function InstagramReels() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  
-                  {/* Hover Overlay with Play Icon */}
+
+                  {/* Hover Overlay with Conditionally Rendered Play Icon */}
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                      <Play className="size-6 text-[var(--brand)] fill-[var(--brand)] ml-1" />
-                    </div>
+                    {reel.isVideo && (
+                      <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                        <Play className="size-6 text-[var(--brand)] fill-[var(--brand)] ml-1" />
+                      </div>
+                    )}
                   </div>
 
                   {/* Gradient Caption Overlay */}
@@ -95,8 +152,8 @@ export function InstagramReels() {
         </div>
 
         <ScrollReveal direction="up" delay={200} className="mt-8 flex justify-center">
-          <ButtonLink 
-            href="https://instagram.com" 
+          <ButtonLink
+            href="https://instagram.com"
             target="_blank"
             variant="secondary"
           >
