@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SkipLink } from "@/components/site/SkipLink";
+import { FloatingQuizCTA } from "@/components/ui/FloatingQuizCTA";
 
 const poppins = Poppins({
   variable: "--font-body",
@@ -52,6 +53,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <FloatingQuizCTA />
       </body>
     </html>
   );
