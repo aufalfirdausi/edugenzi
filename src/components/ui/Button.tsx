@@ -20,9 +20,9 @@ const variants: Record<NonNullable<CommonProps["variant"]>, string> = {
 };
 
 const sizes: Record<NonNullable<CommonProps["size"]>, string> = {
-  sm: "h-9 px-4 text-sm",
-  md: "h-11 px-5 text-sm",
-  lg: "h-12 px-6 text-base",
+  sm: "h-12 px-6 text-base md:h-10 md:px-4 md:text-sm", // min 48px on mobile
+  md: "h-12 px-6 text-base md:h-11 md:px-5 md:text-sm", // min 48px on mobile
+  lg: "h-14 px-8 text-lg md:h-12 md:px-6 md:text-base", // min 56px on mobile
 };
 
 export function Button({

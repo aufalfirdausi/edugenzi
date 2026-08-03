@@ -204,7 +204,7 @@ export function InterestQuiz() {
                     value={parentName}
                     onChange={(e) => setParentName(e.target.value)}
                     placeholder="cth. Ibu Sarah"
-                    className="w-full rounded-xl border border-[var(--border)] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand)]"
+                    className="w-full min-h-[48px] rounded-xl border border-[var(--border)] px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand)]"
                   />
                 </div>
                 <div>
@@ -214,7 +214,7 @@ export function InterestQuiz() {
                     value={parentWA}
                     onChange={(e) => setParentWA(e.target.value)}
                     placeholder="cth. 081234567890"
-                    className="w-full rounded-xl border border-[var(--border)] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand)]"
+                    className="w-full min-h-[48px] rounded-xl border border-[var(--border)] px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand)]"
                   />
                 </div>
                 <div>
@@ -224,7 +224,7 @@ export function InterestQuiz() {
                     value={childName}
                     onChange={(e) => setChildName(e.target.value)}
                     placeholder="cth. Raka"
-                    className="w-full rounded-xl border border-[var(--border)] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand)]"
+                    className="w-full min-h-[48px] rounded-xl border border-[var(--border)] px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand)]"
                   />
                 </div>
                 <div>
@@ -232,7 +232,7 @@ export function InterestQuiz() {
                   <select
                     value={childAge}
                     onChange={(e) => setChildAge(e.target.value)}
-                    className="w-full rounded-xl border border-[var(--border)] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand)] bg-white"
+                    className="w-full min-h-[48px] rounded-xl border border-[var(--border)] px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand)] bg-white"
                   >
                     <option value="">Pilih usia</option>
                     {Array.from({ length: 9 }, (_, i) => i + 7).map(age => (
@@ -247,7 +247,7 @@ export function InterestQuiz() {
                     value={school}
                     onChange={(e) => setSchool(e.target.value)}
                     placeholder="cth. SD Cendekia"
-                    className="w-full rounded-xl border border-[var(--border)] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand)]"
+                    className="w-full min-h-[48px] rounded-xl border border-[var(--border)] px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand)]"
                   />
                 </div>
                 
@@ -270,7 +270,7 @@ export function InterestQuiz() {
 
                 <button
                   onClick={handleStart}
-                  className="mt-4 w-full rounded-xl bg-blue-900 px-6 py-3.5 font-bold text-white transition-all hover:bg-blue-800 shadow-md"
+                  className="mt-4 w-full min-h-[48px] rounded-xl bg-blue-900 px-6 py-3.5 font-bold text-white transition-all hover:bg-blue-800 shadow-md"
                 >
                   Mulai Kuis →
                 </button>
@@ -324,14 +324,14 @@ export function InterestQuiz() {
                       <p className="font-semibold text-[var(--ink)] leading-relaxed">
                         {si + 1}. {text}
                       </p>
-                      <div className="grid gap-2">
+                      <div className="grid gap-4">
                         {CHOICES.map(choice => {
                           const isSelected = catAnswers[si] === choice.v;
                           return (
                             <button
                               key={choice.v}
                               onClick={() => handleChoice(cat.id, si, choice.v)}
-                              className={`w-full text-left px-4 py-3 rounded-xl border-[1.5px] text-sm transition-all duration-200 ${
+                              className={`w-full min-h-[48px] text-left px-4 py-3 rounded-xl border-[1.5px] text-base md:text-sm transition-all duration-200 ${
                                 isSelected 
                                   ? "border-[var(--sel-color)] bg-slate-50 font-bold text-[var(--ink)] shadow-sm" 
                                   : "border-[var(--border)] text-[var(--muted)] hover:border-slate-300 hover:bg-slate-50"

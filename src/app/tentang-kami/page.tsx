@@ -32,7 +32,7 @@ export default function TentangKamiPage() {
       <OrganicBackground />
 
       {/* 1. Hero Section */}
-      <section className="pt-24 lg:pt-32 pb-16">
+      <section className="pt-20 lg:pt-32 pb-12 lg:pb-16">
         <Container className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column (Typography & CTA) */}
@@ -84,7 +84,7 @@ export default function TentangKamiPage() {
       </section>
 
       {/* Filosofi Logo */}
-      <section id="filosofi-logo" className="py-20 bg-teal-50/30">
+      <section id="filosofi-logo" className="py-12 md:py-20 bg-teal-50/30">
         <Container>
           <ScrollReveal direction="up">
             <h2 className="font-[var(--font-display)] text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16">
@@ -158,7 +158,7 @@ export default function TentangKamiPage() {
       </section>
 
       {/* 2. Section: Sambutan dari Pendiri */}
-      <section className="py-24">
+      <section className="py-12 md:py-24">
         <Container>
           <ScrollReveal direction="up">
             <h2 className="font-[var(--font-display)] text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16">
@@ -200,7 +200,7 @@ export default function TentangKamiPage() {
       </section>
 
       {/* 3. Section: Visi & Misi */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-12 md:py-24 bg-slate-50">
         <Container>
           <div className="max-w-4xl mx-auto">
             <ScrollReveal direction="up">
@@ -258,7 +258,7 @@ export default function TentangKamiPage() {
       </section>
 
       {/* 4. Section: Fondasi Kurikulum */}
-      <section className="py-24">
+      <section className="py-12 md:py-24">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <ScrollReveal direction="up">
@@ -317,7 +317,7 @@ export default function TentangKamiPage() {
       </section>
 
       {/* 5. Section: Kenapa Memilih Edugenzi */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-12 md:py-24 bg-slate-50">
         <Container>
           <ScrollReveal direction="up">
             <h2 className="font-[var(--font-display)] text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16">
@@ -367,7 +367,7 @@ export default function TentangKamiPage() {
       </section>
 
       {/* 6. Section: CTA Block */}
-      <section className="py-24 bg-slate-900">
+      <section className="py-16 md:py-24 bg-slate-900">
         <Container>
           <ScrollReveal direction="up">
             <div className="text-center max-w-3xl mx-auto px-4">
@@ -376,7 +376,7 @@ export default function TentangKamiPage() {
               </h2>
               <ButtonLink
                 href={links.consultation}
-                className="bg-orange-500 hover:bg-orange-600 text-white border-none rounded-full px-8 py-4 text-lg font-bold"
+                className="bg-orange-500 hover:bg-orange-600 text-white border-none rounded-full px-6 py-3.5 md:px-8 md:py-4 text-base md:text-lg font-bold w-full md:w-auto text-center"
                 external
               >
                 Konsultasi via WhatsApp

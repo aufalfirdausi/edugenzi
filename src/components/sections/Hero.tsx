@@ -6,15 +6,15 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-12 sm:pt-16 lg:pt-20">
-      <Container className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+    <section className="relative overflow-hidden pt-8 sm:pt-16 lg:pt-20">
+      <Container className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
         {/* Text Content (Moved to Right) */}
         <ScrollReveal direction="left" className="lg:col-span-6 order-2 lg:order-2">
 
           <div className="flex flex-col items-center gap-4 lg:items-start text-center lg:text-left">
-            <h1 className=" mt-5 text-4xl font-extrabold text-[var(--brand)] tracking-tight sm:text-5xl drop-shadow-[0_4px_16px_rgba(255,255,255,1)]">
+            <h1 className=" mt-2 text-3xl font-extrabold text-[var(--brand)] tracking-tight sm:text-5xl drop-shadow-[0_4px_16px_rgba(255,255,255,1)]">
               Edu<span className="text-[var(--brand-3)]">genzi</span>{" "}
-              <span className="font-[var(--font-display)] text-3xl leading-snug tracking-tight text-[var(--ink)] sm:text-4xl block mt-2">
+              <span className="font-[var(--font-display)] text-2xl leading-snug tracking-tight text-[var(--ink)] sm:text-4xl block mt-2">
                 Belajar Sambil Berkarya: Coding, Desain, Robotik & Public Speaking
               </span>
             </h1>
@@ -24,8 +24,8 @@ export function Hero() {
             Edugenzi adalah tempat belajar teknologi yang dirancang lewat metode belajar sambil praktik. Setiap pertemuan, siswa membuat karya nyata — bukan sekadar mengerjakan soal — sehingga progres belajar langsung terlihat.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center justify-center lg:justify-start">
-            <ButtonLink href={links.consultation} external size="lg" className="shadow-2xl">
+          <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center justify-center lg:justify-start w-full">
+            <ButtonLink href={links.consultation} external size="lg" className="shadow-2xl w-full sm:w-auto">
               Konsultasi via WhatsApp
               <span aria-hidden>→</span>
             </ButtonLink>
