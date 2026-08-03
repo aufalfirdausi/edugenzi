@@ -1,9 +1,25 @@
+import Image from "next/image";
 import { Metadata } from "next";
 import { OrganicBackground } from "@/components/ui/OrganicBackground";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { ButtonLink } from "@/components/ui/Button";
+import { links } from "@/lib/links";
+import {
+  Hexagon,
+  Book,
+  Type,
+  Smile,
+  CheckCircle2,
+  Heart,
+  Wrench,
+  Trophy,
+  Folder,
+  Sparkles,
+  UserCheck,
+  TrendingUp
+} from "lucide-react";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Tentang Kami",
@@ -12,70 +28,357 @@ export const metadata: Metadata = {
 
 export default function TentangKamiPage() {
   return (
-    <div className="pb-16 relative">
+    <div className="pb-0 relative overflow-hidden">
       <OrganicBackground />
-      
-      {/* Hero / Core Story */}
+
+      {/* 1. Hero Section */}
       <section className="pt-24 lg:pt-32 pb-16">
-        <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <ScrollReveal direction="up">
-              <h1 className="font-[var(--font-display)] text-4xl leading-tight tracking-tight text-[var(--ink)] sm:text-5xl lg:text-6xl mb-6">
-                Membangun Generasi <br className="hidden sm:block" />
-                <span className="text-[var(--brand)]">Kreatif & Percaya Diri</span>
+        <Container className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Column (Typography & CTA) */}
+            <ScrollReveal direction="right">
+              <h1 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900">
+                Kenali Edugenzi<br />Lebih Dekat
               </h1>
-              <p className="text-lg leading-relaxed text-[var(--muted)] mb-8">
-                Edugenzi lahir dari sebuah keresahan: banyak anak menghabiskan waktunya di depan layar hanya sebagai penikmat pasif. Kami percaya bahwa setiap anak memiliki potensi untuk menjadi pencipta — membuat karya, menyelesaikan masalah, dan mengekspresikan diri melalui teknologi.
+              <p className="mt-6 text-lg text-slate-500 leading-relaxed">
+                Temukan Visi, Misi, dan Komitmen Kami Membentuk Generasi Digital yang Percaya Diri
               </p>
-              <p className="text-lg leading-relaxed text-[var(--muted)]">
-                Lebih dari sekadar tempat les coding atau desain, Edugenzi adalah ruang aman bagi anak-anak untuk mengeksplorasi minat mereka, membuat kesalahan, belajar dari kegagalan, dan akhirnya membangun rasa percaya diri yang akan berguna seumur hidup.
-              </p>
+              <Link
+                href="#filosofi-logo"
+                className="inline-block mt-8 px-8 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-bold transition-colors shadow-md"
+              >
+                Pelajari Selengkapnya
+              </Link>
             </ScrollReveal>
-          </div>
-        </Container>
-      </section>
 
-      {/* Visi & Misi */}
-      <section className="py-16">
-        <Container>
-          <div className="mb-12">
+            {/* Right Column (Image with Glow Effect) */}
             <ScrollReveal direction="left">
-              <SectionHeading 
-                eyebrow="Tujuan Kami"
-                color="yellow"
-                title="Visi & Misi Edugenzi"
-                align="center"
-              />
-            </ScrollReveal>
-          </div>
+              <div className="relative">
+                {/* Glowing Background Effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-emerald-100 via-white to-orange-100 opacity-70 blur-3xl -z-10 rounded-full" />
 
-          <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
-            <ScrollReveal direction="up" delay={100} className="h-full">
-              <Card className="flex flex-col h-full p-8" color="cream">
-                <h3 className="font-[var(--font-display)] text-2xl font-bold tracking-tight text-[var(--ink)] mb-4 text-center">
-                  Visi
-                </h3>
-                <p className="text-base leading-relaxed text-[var(--muted)] text-center flex-grow">
-                  Menjadi ekosistem pendidikan teknologi terbaik di Aceh yang mencetak generasi muda yang kreatif, inovatif, dan siap menghadapi tantangan masa depan.
-                </p>
-              </Card>
-            </ScrollReveal>
-
-            <ScrollReveal direction="up" delay={200} className="h-full">
-              <Card className="flex flex-col h-full p-8" color="amber">
-                <h3 className="font-[var(--font-display)] text-2xl font-bold tracking-tight text-[var(--ink)] mb-4 text-center">
-                  Misi
-                </h3>
-                <ul className="text-base leading-relaxed text-[var(--muted)] space-y-3 flex-grow list-disc list-outside pl-5">
-                  <li>Menyediakan kurikulum berbasis proyek (Project-Based Learning) yang relevan dengan perkembangan industri.</li>
-                  <li>Menciptakan lingkungan belajar yang menyenangkan, kolaboratif, dan suportif.</li>
-                  <li>Mengembangkan bukan hanya hard skills (coding, desain) tetapi juga soft skills (komunikasi, problem solving).</li>
-                </ul>
-              </Card>
+                {/* Image Placeholder */}
+                <div className="aspect-[4/3] w-full bg-slate-200 rounded-[2rem] shadow-lg relative overflow-hidden">
+                  <Image src="/hero-tentangkami.jpg" alt="Edugenzi" fill className="object-cover" />
+                </div>
+              </div>
             </ScrollReveal>
           </div>
         </Container>
       </section>
+
+      {/* Filosofi Logo */}
+      <section id="filosofi-logo" className="py-20 bg-teal-50/30">
+        <Container>
+          <ScrollReveal direction="up">
+            <h2 className="font-[var(--font-display)] text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16">
+              Filosofi Logo Edugenzi
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-16">
+            <ScrollReveal direction="left" className="flex justify-center">
+              {/* Visual representation of the logo */}
+              <div className="relative w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-emerald-500 to-teal-700 rounded-[40px] rotate-3 shadow-2xl flex items-center justify-center overflow-hidden">
+                <div className="relative w-full h-full -rotate-3">
+                  <Image src="/logo-edugenzi.png" alt="Logo Edugenzi" fill className="object-contain p-4" />
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <div className="space-y-6">
+                {/* 1 */}
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-emerald-600">
+                    <Hexagon size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-lg mb-1">Hexagon Segi Enam</h3>
+                    <p className="text-slate-600 leading-relaxed">Melambangkan struktur yang kuat, efisiensi, dan keterhubungan teknologi dengan kreativitas yang tak terbatas.</p>
+                  </div>
+                </div>
+                {/* 2 */}
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-emerald-600">
+                    <Book size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-lg mb-1">Tumpukan Buku</h3>
+                    <p className="text-slate-600 leading-relaxed">Simbol pengetahuan mendalam dan fondasi belajar yang selalu kami kedepankan dalam setiap program.</p>
+                  </div>
+                </div>
+                {/* 3 */}
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-emerald-600">
+                    <Type size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-lg mb-1">Huruf E</h3>
+                    <p className="text-slate-600 leading-relaxed">Representasi dari Edugenzi; ekosistem pendidikan (Education) yang adaptif terhadap perubahan zaman.</p>
+                  </div>
+                </div>
+                {/* 4 */}
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-emerald-600">
+                    <Type size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-lg mb-1">Huruf Z</h3>
+                    <p className="text-slate-600 leading-relaxed">Melambangkan Generasi Z dan Alpha, generasi masa depan yang akan memimpin era digital.</p>
+                  </div>
+                </div>
+                {/* 5 */}
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-emerald-600">
+                    <Smile size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-lg mb-1">Wajah Senyum</h3>
+                    <p className="text-slate-600 leading-relaxed">Pengingat bahwa proses belajar harus selalu menyenangkan, positif, dan ramah bagi anak-anak.</p>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal direction="up">
+            <p className="text-center text-slate-600 max-w-2xl mx-auto leading-relaxed text-lg italic">
+              Logo ini bukan sekadar gambar, melainkan representasi dari komitmen kami untuk terus mendidik generasi masa depan yang cerdas, kreatif, dan berkarakter.
+            </p>
+          </ScrollReveal>
+        </Container>
+      </section>
+
+      {/* 2. Section: Sambutan dari Pendiri */}
+      <section className="py-24">
+        <Container>
+          <ScrollReveal direction="up">
+            <h2 className="font-[var(--font-display)] text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16">
+              Sambutan dari Pendiri Edugenzi
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
+            <ScrollReveal direction="right" className="md:col-span-5 order-2 md:order-1">
+              <div className="aspect-[4/5] bg-slate-200 rounded-3xl w-full shadow-lg relative overflow-hidden">
+                {/* Placeholder Image */}
+                <div className="absolute inset-0 flex items-center justify-center text-slate-400">
+                  <Image src="/founder.png" alt="Founder Edugenzi" fill className="object-cover" />
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="left" className="md:col-span-7 order-1 md:order-2">
+              <div className="border-l-4 border-emerald-600 pl-6 lg:pl-8 space-y-6">
+                <p className="text-lg leading-relaxed text-slate-700">
+                  "Sejak awal mula kami mendirikan Edugenzi, mimpi kami sangatlah sederhana: kami ingin anak-anak Indonesia, khususnya di Aceh, tidak hanya menjadi konsumen teknologi, tetapi mampu menjadi produsen karya digital yang bermakna. Dunia bergerak begitu cepat, dan pendidikan tradisional seringkali kesulitan untuk mengejar ketertinggalan tersebut."
+                </p>
+                <p className="text-lg leading-relaxed text-slate-700">
+                  "Kami merancang ekosistem belajar ini bukan hanya untuk mencetak programmer atau desainer hebat, melainkan untuk melatih cara berpikir kritis, memecahkan masalah, dan menumbuhkan rasa percaya diri yang tinggi saat mereka berkarya."
+                </p>
+                <p className="text-lg leading-relaxed text-slate-700">
+                  "Mari bersama-sama kita persiapkan mereka hari ini, agar mereka siap memimpin masa depannya esok hari."
+                </p>
+                <div className="pt-4">
+                  <p className="font-bold text-xl text-slate-900 font-[var(--font-display)]">
+                    Semoga Raharja Wijaya (Mas Jaya)
+                  </p>
+                  <p className="text-slate-500 font-medium">Founder Edugenzi</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* 3. Section: Visi & Misi */}
+      <section className="py-24 bg-slate-50">
+        <Container>
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal direction="up">
+              <div className="text-center mb-16">
+                <h2 className="font-[var(--font-display)] text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                  Visi Edugenzi
+                </h2>
+                <p className="text-xl md:text-2xl leading-relaxed text-slate-700">
+                  "Menjadi ekosistem pendidikan teknologi terbaik di Aceh yang mencetak generasi muda yang kreatif, inovatif, dan siap menghadapi tantangan masa depan."
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={200}>
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
+                <h2 className="font-[var(--font-display)] text-3xl font-bold text-slate-900 mb-8 text-center">
+                  Misi Edugenzi
+                </h2>
+                <ul className="space-y-4">
+                  <li className="flex gap-4 items-start">
+                    <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-1" size={24} />
+                    <span className="text-lg text-slate-700 leading-relaxed">
+                      Menyediakan kurikulum berbasis proyek (Project-Based Learning) yang relevan dengan perkembangan industri.
+                    </span>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-1" size={24} />
+                    <span className="text-lg text-slate-700 leading-relaxed">
+                      Menciptakan lingkungan belajar yang interaktif, menyenangkan, kolaboratif, dan suportif.
+                    </span>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-1" size={24} />
+                    <span className="text-lg text-slate-700 leading-relaxed">
+                      Mengembangkan bukan hanya hard skills (coding, desain) tetapi juga soft skills (komunikasi, problem solving).
+                    </span>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-1" size={24} />
+                    <span className="text-lg text-slate-700 leading-relaxed">
+                      Mendampingi setiap anak secara personal agar mereka dapat menemukan minat dan bakat uniknya.
+                    </span>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-1" size={24} />
+                    <span className="text-lg text-slate-700 leading-relaxed">
+                      Membangun kolaborasi erat dengan orang tua untuk mengoptimalkan potensi anak di dalam dan luar kelas.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* 4. Section: Fondasi Kurikulum */}
+      <section className="py-24">
+        <Container>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal direction="up">
+              <h2 className="font-[var(--font-display)] text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                Fondasi Kurikulum Edugenzi
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Kami membangun standar pembelajaran yang memastikan setiap anak mendapatkan perhatian, praktik nyata, serta dokumentasi progres yang jelas.
+              </p>
+            </ScrollReveal>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {/* Card 1 */}
+            <ScrollReveal direction="up" delay={100}>
+              <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 h-full">
+                <Heart className="text-emerald-600 mb-6" size={36} />
+                <h3 className="font-bold text-xl text-slate-900 mb-3">Edugenzi Care</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Laporan rutin bulanan kepada orang tua mengenai perkembangan anak, bukan hanya dari sisi nilai tapi juga karakter dan minat.
+                </p>
+              </div>
+            </ScrollReveal>
+            {/* Card 2 */}
+            <ScrollReveal direction="up" delay={200}>
+              <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 h-full">
+                <Wrench className="text-blue-600 mb-6" size={36} />
+                <h3 className="font-bold text-xl text-slate-900 mb-3">Project-Based Practice</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Setiap materi selalu ditutup dengan pembuatan proyek riil. Teori hanya 20%, sementara praktik dan eksekusi memakan porsi 80%.
+                </p>
+              </div>
+            </ScrollReveal>
+            {/* Card 3 */}
+            <ScrollReveal direction="up" delay={300}>
+              <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 h-full">
+                <Trophy className="text-orange-500 mb-6" size={36} />
+                <h3 className="font-bold text-xl text-slate-900 mb-3">Edugenzi Achievement Card (EAC)</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Buku progres digital yang mencatat pencapaian, level, dan badge khusus yang didapat anak setiap menyelesaikan milestones.
+                </p>
+              </div>
+            </ScrollReveal>
+            {/* Card 4 */}
+            <ScrollReveal direction="up" delay={400}>
+              <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 h-full">
+                <Folder className="text-sky-500 mb-6" size={36} />
+                <h3 className="font-bold text-xl text-slate-900 mb-3">Digital Portfolio</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Hasil akhir dari setiap karya disimpan dengan rapi dalam bentuk portofolio digital yang dapat dibanggakan oleh anak dan orang tua.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* 5. Section: Kenapa Memilih Edugenzi */}
+      <section className="py-24 bg-slate-50">
+        <Container>
+          <ScrollReveal direction="up">
+            <h2 className="font-[var(--font-display)] text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16">
+              Kenapa Memilih Edugenzi?
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Card 1 */}
+            <ScrollReveal direction="up" delay={100}>
+              <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 text-center h-full">
+                <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center mb-6">
+                  <Sparkles size={32} />
+                </div>
+                <h3 className="font-bold text-xl text-slate-900 mb-3">Praktis & Relevan</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Materi yang diajarkan selalu menggunakan tools standar industri yang sangat relevan dengan kebutuhan masa kini.
+                </p>
+              </div>
+            </ScrollReveal>
+            {/* Card 2 */}
+            <ScrollReveal direction="up" delay={200}>
+              <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 text-center h-full">
+                <div className="w-16 h-16 rounded-full bg-blue-50 text-blue-600 mx-auto flex items-center justify-center mb-6">
+                  <UserCheck size={32} />
+                </div>
+                <h3 className="font-bold text-xl text-slate-900 mb-3">Pendekatan Personal</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Kelas kecil maksimal 6 anak, memastikan setiap instruktur bisa fokus membimbing perkembangan individual masing-masing.
+                </p>
+              </div>
+            </ScrollReveal>
+            {/* Card 3 */}
+            <ScrollReveal direction="up" delay={300}>
+              <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 text-center h-full">
+                <div className="w-16 h-16 rounded-full bg-orange-50 text-orange-500 mx-auto flex items-center justify-center mb-6">
+                  <TrendingUp size={32} />
+                </div>
+                <h3 className="font-bold text-xl text-slate-900 mb-3">Kurikulum Berjenjang</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Dari level pemula hingga mahir, dirancang khusus untuk memastikan anak tumbuh seiring bertambahnya usia.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* 6. Section: CTA Block */}
+      <section className="py-24 bg-slate-900">
+        <Container>
+          <ScrollReveal direction="up">
+            <div className="text-center max-w-3xl mx-auto px-4">
+              <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
+                Siap Kenalkan Anak dengan Dunia Teknologi?
+              </h2>
+              <ButtonLink
+                href={links.consultation}
+                className="bg-orange-500 hover:bg-orange-600 text-white border-none rounded-full px-8 py-4 text-lg font-bold"
+                external
+              >
+                Konsultasi via WhatsApp
+              </ButtonLink>
+            </div>
+          </ScrollReveal>
+        </Container>
+      </section>
+
     </div>
   );
 }
