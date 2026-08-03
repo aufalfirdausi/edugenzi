@@ -49,6 +49,12 @@ export default function TentangKamiPage() {
               >
                 Pelajari Selengkapnya
               </Link>
+
+              <div className="relative w-64 h-64 md:w-80 md:h-80 mt-55 bg-gradient-to-br from-emerald-500 to-teal-700 rounded-[40px] rotate-3 shadow-2xl flex items-center justify-center overflow-hidden">
+                <div className="relative w-full h-full -rotate-3">
+                  <Image src="/logo-edugenzi.png" alt="Logo Edugenzi" fill className="object-contain p-4" />
+                </div>
+              </div>
             </ScrollReveal>
 
             {/* Right Column (Image with Glow Effect) */}
@@ -61,6 +67,16 @@ export default function TentangKamiPage() {
                 <div className="aspect-[4/3] w-full bg-slate-200 rounded-[2rem] shadow-lg relative overflow-hidden">
                   <Image src="/hero-tentangkami.jpg" alt="Edugenzi" fill className="object-cover" />
                 </div>
+              </div>
+
+              <div className="mt-16">
+                <h3 className="font-bold text-slate-900 text-2xl mb-4">Tentang Edugenzi</h3>
+                <p className="text-lg text-slate-600 leading-relaxed mb-4">
+                  Edugenzi adalah tempat belajar yang membantu anak mengembangkan kreativitas, logika, komunikasi, dan keterampilan teknologi melalui pengalaman belajar yang menyenangkan, interaktif, dan berbasis proyek nyata.
+                </p>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Kami percaya bahwa setiap anak memiliki potensi untuk menjadi pencipta, bukan sekadar pengguna teknologi.
+                </p>
               </div>
             </ScrollReveal>
           </div>
@@ -76,17 +92,8 @@ export default function TentangKamiPage() {
             </h2>
           </ScrollReveal>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-16">
-            <ScrollReveal direction="left" className="flex justify-center">
-              {/* Visual representation of the logo */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-emerald-500 to-teal-700 rounded-[40px] rotate-3 shadow-2xl flex items-center justify-center overflow-hidden">
-                <div className="relative w-full h-full -rotate-3">
-                  <Image src="/logo-edugenzi.png" alt="Logo Edugenzi" fill className="object-contain p-4" />
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
+          <div className="max-w-3xl mx-auto mb-16">
+            <ScrollReveal direction="up">
               <div className="space-y-6">
                 {/* 1 */}
                 <div className="flex gap-4">
