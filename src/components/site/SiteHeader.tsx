@@ -14,6 +14,7 @@ const nav = [
   { label: "Karya Siswa", href: "/#projects" },
   { label: "Tentang Kami", href: "/tentang-kami" },
   { label: "FAQ", href: "/#faq" },
+  { label: "Temukan Minat & Bakat Anak", href: "/quiz" },
 ] as const;
 
 export function SiteHeader() {

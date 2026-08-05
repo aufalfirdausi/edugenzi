@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
-import html2canvas from "html2canvas";
+import { toPng } from "html-to-image";
 import { jsPDF } from "jspdf";
 
 export const CATEGORIES = [
@@ -156,18 +156,18 @@ export function InterestQuiz() {
     if (!resultCardRef.current) return;
     setIsDownloading(true);
     try {
-      const canvas = await html2canvas(resultCardRef.current, {
-        scale: 2,
+      const dataUrl = await toPng(resultCardRef.current, {
+        quality: 1,
         backgroundColor: "#ffffff",
-        useCORS: true,
+        pixelRatio: 2,
       });
-      const imgData = canvas.toDataURL("image/png");
       
       const pdf = new jsPDF("p", "mm", "a4");
+      const imgProps = pdf.getImageProperties(dataUrl);
       const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
       
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.addImage(dataUrl, "PNG", 0, 0, pdfWidth, pdfHeight);
       pdf.save(`Hasil-Asesmen-Edugenzi-${childName.replace(/\s+/g, "-")}.pdf`);
     } catch (error) {
       console.error("Gagal membuat PDF:", error);
