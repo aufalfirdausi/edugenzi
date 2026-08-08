@@ -12,8 +12,8 @@ const nav = [
   { label: "Program", href: "/#program" },
   { label: "Cara Belajar", href: "/#journey" },
   { label: "Karya Siswa", href: "/#projects" },
-  { label: "Tentang Kami", href: "/tentang-kami" },
   { label: "FAQ", href: "/#faq" },
+  { label: "Tentang Kami", href: "/tentang-kami" },
   { label: "Temukan Minat & Bakat Anak", href: "/quiz" },
 ] as const;
 
@@ -64,7 +64,7 @@ export function SiteHeader() {
               Chat via WhatsApp
             </ButtonLink>
           </div>
-          
+
           <button
             className="md:hidden p-2 -mr-2 text-slate-600 hover:text-slate-900 transition-colors flex items-center justify-center min-h-[48px] min-w-[48px]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -90,7 +90,7 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
-          
+
           <div className="px-6 pb-12 mt-auto">
             <ButtonLink
               href={links.consultation}

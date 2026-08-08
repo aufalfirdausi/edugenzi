@@ -87,6 +87,7 @@ export function InterestQuiz() {
   const [school, setSchool] = useState("");
   const [consent, setConsent] = useState(false);
   const [introError, setIntroError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Quiz State
   const [catIndex, setCatIndex] = useState(0);
@@ -124,11 +125,56 @@ export function InterestQuiz() {
     });
   };
 
-  const handleNextCategory = () => {
+  const submitLeadToSheets = async (topCategoryLabel: string) => {
+    const url = process.env.NEXT_PUBLIC_SHEETDB_URL;
+    if (!url) {
+      console.warn("NEXT_PUBLIC_SHEETDB_URL is not defined.");
+      return;
+    }
+    
+    const leadData = {
+      data: {
+        "WALI": parentName,
+        "NOMOR-WALI": parentWA,
+        "NAMA-SISWA": childName,
+        "UMUR_SISWA": childAge,
+        "SEKOLAH": school,
+        "RESULT_CATEGORY": topCategoryLabel,
+        "TIMESTAMP": new Date().toLocaleString("en-GB", { timeZone: "Asia/Jakarta" }).replace(",", "")
+      }
+    };
+
+    try {
+      await fetch(url, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(leadData)
+      });
+    } catch (error) {
+      console.error("Failed to submit lead data to sheets:", error);
+    }
+  };
+
+  const handleNextCategory = async () => {
     if (catIndex < CATEGORIES.length - 1) {
       setCatIndex(prev => prev + 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
+      setIsSubmitting(true);
+      
+      const scores: Record<string, number> = {};
+      CATEGORIES.forEach(c => {
+        scores[c.id] = answers[c.id].reduce((a, b) => (a || 0) + (b || 0), 0) as number;
+      });
+      const ranked = [...CATEGORIES].sort((a, b) => scores[b.id] - scores[a.id]);
+      const topCategoryLabel = ranked[0].label;
+
+      await submitLeadToSheets(topCategoryLabel);
+
+      setIsSubmitting(false);
       setCurrentStep(2);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -359,10 +405,10 @@ export function InterestQuiz() {
                 )}
                 <button
                   onClick={handleNextCategory}
-                  disabled={!allAnswered}
+                  disabled={!allAnswered || isSubmitting}
                   className="flex-[2] rounded-xl bg-blue-900 px-4 py-3 font-bold text-white transition-all hover:bg-blue-800 disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
                 >
-                  {catIndex === CATEGORIES.length - 1 ? "Lihat Hasil →" : "Lanjut →"}
+                  {isSubmitting ? "Menyiapkan Hasil..." : catIndex === CATEGORIES.length - 1 ? "Lihat Hasil →" : "Lanjut →"}
                 </button>
               </div>
             </Card>
