@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const stats = [
-  { value: "12–18", label: "Rentang usia siswa" },
+  { value: "6–18", label: "Rentang usia siswa" },
   { value: "4", label: "Program utama" },
   { value: "12–24x", label: "Pertemuan per program" },
   { value: "90 mnt", label: "Durasi per sesi" },

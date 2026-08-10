@@ -1,6 +1,6 @@
 <div align="center">
   <h1>🚀 Edugenzi</h1>
-  <p><strong>Kursus Teknologi & Kreativitas untuk Anak dan Remaja (12-18 Tahun)</strong></p>
+  <p><strong>Kursus Teknologi & Kreativitas untuk Anak dan Remaja (6-18 Tahun)</strong></p>
   <p>Belajar Sambil Berkarya: Coding, Desain, Robotik & Public Speaking</p>
 </div>
 

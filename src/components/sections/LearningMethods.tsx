@@ -8,7 +8,7 @@ const methods = [
   {
     title: "Kelas Online",
     desc: "Belajar dari mana saja. Cocok untuk anak yang suka fleksibilitas dan kenyamanan di rumah.",
-    waLink: "https://wa.me/6281234567890?text=Halo%20Edugenzi,%20saya%20tertarik%20dengan%20Kelas%20Online."
+    waLink: "https://wa.me/6281366660885?text=Halo%20Edugenzi,%20saya%20tertarik%20dengan%20Kelas%20Online."
   },
   {
     title: "Kelas Offline",

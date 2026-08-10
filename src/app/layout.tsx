@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Edugenzi",
   },
   description:
-    "Edugenzi adalah lembaga kursus berbasis STEAM untuk anak usia 7–17 tahun. Program: Coding & AI, Desain Grafis & 3D, Robotika & IoT, dan Public Speaking.",
+    "Edugenzi adalah lembaga kursus berbasis STEAM untuk anak usia 6–18 tahun. Program: Coding & AI, Desain Grafis & 3D, Robotika & IoT, dan Public Speaking.",
   openGraph: {
     title: "Edugenzi | Kursus Teknologi untuk Anak & Remaja",
     description:

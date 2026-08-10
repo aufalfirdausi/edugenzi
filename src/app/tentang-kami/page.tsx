@@ -6,10 +6,6 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ButtonLink } from "@/components/ui/Button";
 import { links } from "@/lib/links";
 import {
-  Hexagon,
-  Book,
-  Type,
-  Smile,
   CheckCircle2,
   Heart,
   Wrench,
@@ -50,8 +46,8 @@ export default function TentangKamiPage() {
                 Pelajari Selengkapnya
               </Link>
 
-              <div className="relative w-64 h-64 md:w-80 md:h-80 mt-55 bg-gradient-to-br from-emerald-500 to-teal-700 rounded-[40px] rotate-3 shadow-2xl flex items-center justify-center overflow-hidden">
-                <div className="relative w-full h-full -rotate-3">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 mt-55 bg-white rounded-[40px] shadow-2xl flex items-center justify-center overflow-hidden">
+                <div className="relative w-full h-full">
                   <Image src="/logo-edugenzi.png" alt="Logo Edugenzi" fill className="object-contain p-4" />
                 </div>
               </div>
@@ -97,8 +93,8 @@ export default function TentangKamiPage() {
               <div className="space-y-6">
                 {/* 1 */}
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-emerald-600">
-                    <Hexagon size={24} />
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                    <Image src="/hexagon.png" alt="Hexagon Segi Enam" width={24} height={24} className="object-contain" />
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900 text-lg mb-1">Hexagon Segi Enam</h3>
@@ -107,8 +103,8 @@ export default function TentangKamiPage() {
                 </div>
                 {/* 2 */}
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-emerald-600">
-                    <Book size={24} />
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                    <Image src="/tumpukan-buku.png" alt="Tumpukan Buku" width={24} height={24} className="object-contain" />
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900 text-lg mb-1">Tumpukan Buku</h3>
@@ -117,8 +113,8 @@ export default function TentangKamiPage() {
                 </div>
                 {/* 3 */}
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-emerald-600">
-                    <Type size={24} />
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                    <Image src="/huruf-e.png" alt="Huruf E" width={24} height={24} className="object-contain" />
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900 text-lg mb-1">Huruf E</h3>
@@ -127,18 +123,8 @@ export default function TentangKamiPage() {
                 </div>
                 {/* 4 */}
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-emerald-600">
-                    <Type size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 text-lg mb-1">Huruf Z</h3>
-                    <p className="text-slate-600 leading-relaxed">Melambangkan Generasi Z dan Alpha, generasi masa depan yang akan memimpin era digital.</p>
-                  </div>
-                </div>
-                {/* 5 */}
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-emerald-600">
-                    <Smile size={24} />
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                    <Image src="/wajah-tersenyum.png" alt="Wajah Senyum" width={24} height={24} className="object-contain" />
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900 text-lg mb-1">Wajah Senyum</h3>
@@ -189,7 +175,7 @@ export default function TentangKamiPage() {
                 </p>
                 <div className="pt-4">
                   <p className="font-bold text-xl text-slate-900 font-[var(--font-display)]">
-                    Semoga Raharja Wijaya (Mas Jaya)
+                    Semoga Raharja Wijaya
                   </p>
                   <p className="text-slate-500 font-medium">Founder Edugenzi</p>
                 </div>

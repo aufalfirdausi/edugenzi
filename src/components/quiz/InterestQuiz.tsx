@@ -133,7 +133,7 @@ export function InterestQuiz() {
     }
     
     const leadData = {
-      data: {
+      data: [{
         "WALI": parentName,
         "NOMOR-WALI": parentWA,
         "NAMA-SISWA": childName,
@@ -141,7 +141,7 @@ export function InterestQuiz() {
         "SEKOLAH": school,
         "RESULT_CATEGORY": topCategoryLabel,
         "TIMESTAMP": new Date().toLocaleString("en-GB", { timeZone: "Asia/Jakarta" }).replace(",", "")
-      }
+      }]
     };
 
     try {
@@ -281,7 +281,7 @@ export function InterestQuiz() {
                     className="w-full min-h-[48px] rounded-xl border border-[var(--border)] px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand)] bg-white"
                   >
                     <option value="">Pilih usia</option>
-                    {Array.from({ length: 9 }, (_, i) => i + 7).map(age => (
+                    {Array.from({ length: 13 }, (_, i) => i + 6).map(age => (
                       <option key={age} value={age}>{age} tahun</option>
                     ))}
                   </select>
