@@ -40,12 +40,12 @@ export function Hero() {
               aria-hidden
             />
             <Image
-              src="/mascot.jpg"
-              alt="Edugenzi Mascot"
-              width={800}
-              height={600}
+              src="/hero-section.png"
+              alt="Edugenzi Student"
+              width={13250}
+              height={8850}
               priority
-              className="relative w-full h-auto object-cover aspect-[4/3] mix-blend-multiply"
+              className="relative w-full h-auto object-contain mix-blend-multiply"
             />
           </div>
 

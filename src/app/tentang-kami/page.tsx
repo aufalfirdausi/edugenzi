@@ -60,8 +60,8 @@ export default function TentangKamiPage() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-emerald-100 via-white to-orange-100 opacity-70 blur-3xl -z-10 rounded-full" />
 
                 {/* Image Placeholder */}
-                <div className="aspect-[4/3] w-full bg-slate-200 rounded-[2rem] shadow-lg relative overflow-hidden">
-                  <Image src="/hero-tentangkami.jpg" alt="Edugenzi" fill className="object-cover" />
+                <div className="aspect-[1/1] w-full bg-slate-200 rounded-[2rem] shadow-lg relative overflow-hidden">
+                  <Image src="/hero-tentang-kami.png" alt="Hero Tentang Kami" fill className="object-cover" />
                 </div>
               </div>
 

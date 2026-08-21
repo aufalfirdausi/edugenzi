@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 const methods = [
   { label: "Daftar Kelas Online", href: "https://wa.me/6281366660885" },
   { label: "Daftar Kelas Offline", href: "https://wa.me/6281366660885" },
-  { label: "Daftar Kelas Private", href: "https://wa.me/6281366660885" },
 ];
 
 export function LearningMethodWidget() {

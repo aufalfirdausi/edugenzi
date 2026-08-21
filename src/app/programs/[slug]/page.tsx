@@ -5,6 +5,7 @@ import { links } from "@/lib/links";
 import { programBySlug, programs, type Program } from "@/content/programs";
 import { ArrowUpRight, Sparkles, MessageCircle, Check, LayoutTemplate, PenTool, Box, MonitorPlay, Bot, Lightbulb, Cpu, Radio, Video, Mic, Presentation } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   params: Promise<{ slug: Program["slug"] }>;
@@ -111,42 +112,16 @@ export default async function ProgramPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Right Column: Output Card */}
-            <div>
-              <div className="relative bg-[#F4F0FF] rounded-[2rem] p-8 md:p-10 shadow-sm border border-indigo-50/50">
-                {/* Header Icons */}
-                <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center justify-center size-12 bg-white rounded-2xl shadow-sm text-indigo-500">
-                    <Sparkles size={24} />
-                  </div>
-                  <div className="bg-white/60 px-4 py-2 rounded-full text-xs font-bold text-indigo-700 uppercase tracking-wider backdrop-blur-sm">
-                    {badgeMap[program.slug] || program.shortTitle}
-                  </div>
-                </div>
-
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                  Contoh output belajar
-                </h3>
-                <p className="text-slate-600 mb-8 leading-relaxed max-w-sm">
-                  Karya nyata yang menjadi bukti perkembangan kemampuan anak Anda:
-                </p>
-
-                {/* Stacked White Cards */}
-                <div className="grid gap-4">
-                  {program.projectIdeas.map((idea, index) => (
-                    <div key={idea} className="bg-white p-5 rounded-2xl shadow-sm border border-white flex items-start gap-4 hover:shadow-md transition-shadow">
-                      <div className={`flex items-center justify-center size-12 rounded-xl shrink-0 ${getProjectBg(index)}`}>
-                        {getProjectIcon(program.slug, index)}
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-slate-900 mb-1">{idea}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">
-                          {program.outcomes[index] || "Menerjemahkan ide menjadi karya nyata."}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            {/* Right Column: Output Card / Image Container */}
+            <div className="w-full h-full flex items-center justify-center">
+              <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square bg-[#F4F0FF] rounded-[2rem] shadow-xl border border-indigo-50/50 overflow-hidden">
+                <Image 
+                  src={`/images/output-${program.slug}.jpg`} 
+                  alt={`Contoh karya ${program.title}`} 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw" 
+                />
               </div>
             </div>
             
@@ -160,12 +135,15 @@ export default async function ProgramPage({ params }: Props) {
           <div className="grid md:grid-cols-3 gap-6">
             {program.highlights.map((highlight, index) => (
               <div key={index} className="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm border border-slate-100 flex items-start gap-4">
-                <div className="flex items-center justify-center size-6 rounded-full bg-emerald-50 text-emerald-600 shrink-0 mt-1">
-                  <Check size={14} strokeWidth={3} />
+                <div className={`flex items-center justify-center size-10 rounded-xl shrink-0 ${getProjectBg(index)} mt-1`}>
+                  {getProjectIcon(program.slug, index)}
                 </div>
-                <p className="text-sm md:text-base text-slate-700 leading-relaxed font-medium">
-                  {highlight}
-                </p>
+                <div>
+                  <h3 className="font-semibold text-slate-900 mb-1 text-base md:text-lg">{highlight.title}</h3>
+                  <p className="text-sm md:text-base text-slate-600 leading-relaxed">
+                    {highlight.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

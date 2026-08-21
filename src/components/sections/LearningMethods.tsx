@@ -14,11 +14,6 @@ const methods = [
     title: "Kelas Offline",
     desc: "Tatap muka langsung dengan fasilitas lengkap. Anak bisa lebih fokus berinteraksi dan berkolaborasi dengan instruktur.",
     waLink: "https://wa.me/6281366660885?text=Halo%20Edugenzi,%20saya%20tertarik%20dengan%20Kelas%20Offline."
-  },
-  {
-    title: "Kelas Private",
-    desc: "Pendampingan 1-on-1 yang intensif. Materi bisa disesuaikan dengan kecepatan dan minat spesifik anak.",
-    waLink: "https://wa.me/6281366660885?text=Halo%20Edugenzi,%20saya%20tertarik%20dengan%20Kelas%20Private."
   }
 ];
 
@@ -32,11 +27,11 @@ export function LearningMethods() {
               eyebrow="Metode Pembelajaran"
               color="green"
               title="Pilih Metode Pembelajaran yang Cocok untuk Anak"
-              description="Kami menyediakan beberapa pilihan metode pembelajaran agar anak bisa belajar dengan maksimal sesuai gaya dan kebutuhan mereka."
+              description="Kami menyediakan pilihan metode pembelajaran agar anak bisa belajar dengan maksimal sesuai gaya dan kebutuhan mereka."
             />
           </ScrollReveal>
 
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto w-full">
             {methods.map((method, idx) => (
               <ScrollReveal 
                 key={method.title} 

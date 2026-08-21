@@ -21,7 +21,7 @@ const MOCK_REELS = [
   {
     id: "3",
     mediaUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop",
-    caption: "Mendesain karakter 3D pertama kali di kelas Design 3D. Seru abis! 🎨",
+    caption: "Mendesain karakter 3D pertama kali di kelas Design Grafis & 3D. Seru abis! 🎨",
     permalink: "https://instagram.com"
   },
   {
