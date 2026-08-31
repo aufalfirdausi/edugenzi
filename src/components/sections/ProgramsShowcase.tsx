@@ -17,7 +17,7 @@ export function ProgramsShowcase() {
   return (
     <section id="program" className="mt-24 scroll-mt-24 lg:mt-32">
       <Container>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-8 sm:gap-10">
           <ScrollReveal direction="left">
             <SectionHeading
               eyebrow="Program pilihan"
@@ -27,33 +27,28 @@ export function ProgramsShowcase() {
             />
           </ScrollReveal>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {programs.map((p, idx) => (
-              <ScrollReveal 
-                key={p.slug} 
-                direction="up"
-                delay={idx * 100}
-                className="h-full"
-              >
-                <Card className="group flex flex-col h-full p-6 sm:p-7" color="amber">
-                  <div className="mb-6 inline-flex items-center justify-center size-14 rounded-2xl bg-[var(--brand-3)]/10 text-[var(--brand-3)] ring-1 ring-[var(--brand-3)]/20 transition-colors group-hover:bg-[var(--brand-3)]/20">
-                    {programIcons[p.slug]}
+              <ScrollReveal key={p.slug} direction="up" delay={idx * 100} className="h-full">
+                <Card className="group flex flex-col h-full p-3 sm:p-7" color="amber">
+                  <div className="mb-4 sm:mb-6 inline-flex items-center justify-center size-10 sm:size-14 rounded-xl sm:rounded-2xl bg-[var(--brand-3)]/10 text-[var(--brand-3)] ring-1 ring-[var(--brand-3)]/20 transition-colors group-hover:bg-[var(--brand-3)]/20">
+                    <div className="scale-75 sm:scale-100">{programIcons[p.slug]}</div>
                   </div>
 
                   <div className="flex flex-col flex-grow">
-                    <div className="mb-4">
-                      <h3 className="font-[var(--font-display)] text-xl tracking-tight text-[var(--ink)]">
+                    <div className="mb-3 sm:mb-4">
+                      <h3 className="font-[var(--font-display)] text-xs sm:text-base md:text-lg lg:text-xl tracking-tight text-[var(--ink)]">
                         {p.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] line-clamp-4">
+                      <p className="mt-2 sm:mt-3 text-[11px] sm:text-sm md:text-base lg:text-lg leading-relaxed text-[var(--muted)] line-clamp-3 sm:line-clamp-4">
                         {p.description}
                       </p>
                     </div>
 
-                    <div className="mt-auto pt-5 border-t border-[var(--border)]/50 flex flex-wrap items-center gap-3">
+                    <div className="mt-auto pt-4 sm:pt-5 border-t border-[var(--border)]/50 flex flex-wrap items-center gap-2">
                       <Link
                         href={`/programs/${p.slug}`}
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-3)] hover:underline"
+                        className="inline-flex items-center gap-1 sm:gap-2 text-[10px] sm:text-xs md:text-sm font-semibold text-[var(--brand-3)] hover:underline"
                       >
                         Lihat detail <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
                       </Link>
@@ -68,4 +63,3 @@ export function ProgramsShowcase() {
     </section>
   );
 }
-

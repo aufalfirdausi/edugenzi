@@ -30,7 +30,7 @@ export function LearningJourney() {
   return (
     <section id="journey" className="mt-16 scroll-mt-24 sm:mt-20">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <ScrollReveal direction="left">
               <SectionHeading
@@ -42,22 +42,18 @@ export function LearningJourney() {
             </ScrollReveal>
           </div>
 
-          <div className="grid gap-4 lg:col-span-8">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:col-span-8">
             {steps.map((s, idx) => {
               return (
-                <ScrollReveal 
-                  key={s.n} 
-                  direction={idx % 2 === 0 ? "left" : "right"}
-                  delay={idx * 100}
-                >
-                  <Card className="p-5 sm:p-6" color="green">
-                    <div className="flex items-start gap-4">
-                      <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[var(--border)] font-[var(--font-display)] text-2xl text-[var(--ink)] ring-1 ring-[var(--border)]">
+                <ScrollReveal key={s.n} direction={idx % 2 === 0 ? "left" : "right"} delay={idx * 100}>
+                  <Card className="p-3 sm:p-6 h-full" color="green">
+                    <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+                      <div className="grid size-9 sm:size-12 shrink-0 place-items-center rounded-xl sm:rounded-2xl bg-[var(--border)] font-[var(--font-display)] text-xs sm:text-base md:text-lg lg:text-xl text-[var(--ink)] ring-1 ring-[var(--border)]">
                         {s.n}
                       </div>
                       <div>
-                        <div className="text-base font-semibold text-[var(--ink)]">{s.title}</div>
-                        <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{s.desc}</p>
+                        <div className="text-xs sm:text-base md:text-lg lg:text-xl font-semibold text-[var(--ink)] leading-tight">{s.title}</div>
+                        <p className="mt-1.5 sm:mt-2 text-[11px] sm:text-sm md:text-base lg:text-lg leading-relaxed text-[var(--muted)]">{s.desc}</p>
                       </div>
                     </div>
                   </Card>
@@ -70,4 +66,3 @@ export function LearningJourney() {
     </section>
   );
 }
-

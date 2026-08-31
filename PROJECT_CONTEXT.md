@@ -12,7 +12,7 @@
 | Linting | ESLint 9 + `eslint-config-next` (core-web-vitals + TypeScript) |
 | Package Mgr | npm (with `overrides` pinning PostCSS to ^8.5.10) |
 
-All components are **React Server Components** by default (no `'use client'` directives anywhere). The app has **zero JavaScript runtime dependencies** beyond `react` and `react-dom`.
+All components are **React Server Components** by default. However, there are exceptions that use `'use client'` (e.g., the Interest Quiz feature) for state management and DOM manipulation. The app includes a few JavaScript runtime dependencies for specific features, such as `lucide-react` for icons, and `jspdf` / `html-to-image` for generating PDF reports.
 
 ## 2. Folder Structure
 
@@ -22,6 +22,8 @@ src/
     globals.css           # Tailwind v4 import + CSS custom properties
     layout.tsx            # Root layout (fonts, header, footer, skip link)
     page.tsx              # Landing page (composes 12 sections)
+    quiz/                 # /quiz page (Interest & Talent Quiz)
+    tentang-kami/         # /tentang-kami page (About Us)
     not-found.tsx         # 404 page
     robots.ts             # Dynamic robots.txt
     sitemap.ts            # Dynamic sitemap.xml (reads programs content)
@@ -33,6 +35,7 @@ src/
     ui/                   # Primitives (Button, Card, Container, SectionHeading)
     site/                 # Site chrome (Header, Footer, SkipLink)
     sections/             # Landing page sections (12 components)
+    quiz/                 # Quiz-related components (InterestQuiz)
   content/                # Data files (programs, projects, testimonials, FAQs)
   lib/                    # Utilities (cn, links)
 public/                   # Static assets (favicon, SVG icons, hero image)
@@ -49,6 +52,8 @@ All routes use the **Next.js App Router** with file-based routing:
 | `/` | `src/app/page.tsx` | Static landing page |
 | `/programs` | `src/app/programs/page.tsx` | Program listing |
 | `/programs/[slug]` | `src/app/programs/[slug]/page.tsx` | Dynamic (SSG: `generateStaticParams` reads programs content) |
+| `/quiz` | `src/app/quiz/page.tsx` | Static page with Client Components for the interactive quiz |
+| `/tentang-kami` | `src/app/tentang-kami/page.tsx` | Static "About Us" page |
 | 404 | `src/app/not-found.tsx` | Custom not-found page |
 
 Navigation uses hash-anchors (e.g., `/#program`, `/#faq`) for the single-page landing sections. The `SiteHeader` nav links to `/` hash targets, not separate pages.
@@ -61,6 +66,8 @@ SEO metadata is defined in `layout.tsx` with a template `"%s | Edugenzi"`. Dynam
 
 - **`layout.tsx`**: Root layout. Sets HTML lang to `id`, applies Poppins + Fraunces font variables, renders `<SkipLink>`, `<SiteHeader>`, `<main>`, `<SiteFooter>`. Metadata includes OpenGraph with `id_ID` locale.
 - **`page.tsx`**: Landing page — composes 12 section components in order with `pb-16` wrapper.
+- **`/tentang-kami/page.tsx`**: About Us page featuring company vision, mission, and founder's message.
+- **`/quiz/page.tsx`**: Children's interest and talent quiz page, rendering the interactive `InterestQuiz` component.
 - **`not-found.tsx`**: 404 page with `Container`, heading in Fraunces font, body text, and two CTAs (primary ButtonLink + secondary Link to /programs).
 - **`robots.ts`**: Allows all crawlers, points sitemap to `https://edugenzi.com/sitemap.xml`.
 - **`sitemap.ts`**: Generates URLs for `/`, `/programs`, and each program detail page from `content/programs.ts`.
@@ -112,7 +119,7 @@ All in `src/components/ui/`. These are the only reusable building blocks:
 
 ## 7. Custom Hooks
 
-**None.** The entire application uses zero custom hooks. There is no client-side interactivity beyond native HTML elements (`<details>` for FAQ).
+The core site uses minimal hooks, but client components like `InterestQuiz.tsx` heavily rely on native React hooks (`useState`, `useRef`) for form state, quiz navigation, and DOM manipulation (exporting results to PDF).
 
 ## 8. Types
 
@@ -127,7 +134,8 @@ No shared types directory; types are minimal and local to their domain.
 
 ## 9. Services
 
-**None.** This is a purely static marketing site — no API calls, no external service integrations, no data fetching from external sources. All content is compiled at build time from TypeScript data files.
+The core site is purely static. However, the **Interest Quiz** feature integrates with an external service:
+- **SheetDB**: Submits quiz lead data directly to a Google Sheet via a POST request.
 
 ## 10. Data Flow
 
@@ -142,7 +150,7 @@ Data is **imported at build time**. No runtime data fetching. The content layer 
 - `ParentTestimonials` reads from `content/testimonials.ts`
 - `FaqSection` reads from `content/faqs.ts`
 
-All state is zero — every section is a pure render function of its imported data.
+Most state is zero — sections are pure render functions of imported data. The exception is interactive tools (like the Quiz), which manage complex client-side state.
 
 ## 11. Styling System
 
@@ -176,11 +184,11 @@ The `prefers-reduced-motion: reduce` media query disables smooth scrolling. No `
 
 ## 14. State Management
 
-**None.** No React state, no context providers, no external state libraries. The app is entirely server-rendered static content. The only "interactive" element is the native `<details>` disclosure widget for FAQs.
+No external state libraries (like Redux or Zustand) are used. React's built-in `useState` is used for client-side interactivity (e.g., managing the multi-step Quiz flow and lead form).
 
 ## 15. Environment Variables
 
-**None defined.** The `.gitignore` excludes `.env*` files. The app does not reference `process.env` anywhere. All configuration (links, content) is hardcoded in TypeScript source files.
+- `NEXT_PUBLIC_SHEETDB_URL`: Used by the Quiz component to post lead submissions to SheetDB.
 
 ## 16. Coding Conventions
 
@@ -235,12 +243,12 @@ Based on existing code:
 
 ## 20. Rules Future Contributors Must Follow
 
-1. **Keep JavaScript bundle minimal** — all new components should be Server Components unless client interactivity is absolutely required. The site currently ships zero client JS. Preserve this.
+1. **Keep JavaScript bundle minimal** — all new components should be Server Components unless client interactivity is absolutely required (like the Quiz). The site is largely static; only add `'use client'` when necessary.
 2. **Content lives in `src/content/`** — do not hardcode marketing copy in components. If you need content, add a file to `src/content/` and import it.
 3. **External links go in `src/lib/links.ts`** — never hardcode WhatsApp numbers, URLs, or social links in components. Centralize them.
 4. **Use the 4-card color system** — when displaying collections (programs, steps, instructors, FAQs), cycle through `["cream", "purple", "green", "amber"]` with `idx % 4`. Eventually this should be extracted into a shared utility.
 5. **CSS variables over Tailwind arbitrary values** — brand colors should be referenced as `var(--brand)`, not Tailwind arbitrary `bg-[#679d41]`. New colors should be added to the `:root` block in `globals.css`.
-6. **No runtime dependencies without review** — the app has zero npm deps beyond React + Next.js. Adding a library (framer-motion, swiper, axios, etc.) must be justified and approved.
+6. **No runtime dependencies without review** — minimize npm deps beyond React + Next.js. Adding a library (e.g., `jspdf`, `lucide-react`) must be justified for a specific feature and approved.
 7. **`generateStaticParams` for dynamic routes** — any new `[param]` route must export `generateStaticParams` to enable SSG. Do not use server-side rendering or ISR unless required.
 8. **Accessibility is not optional** — every decorative element must have `aria-hidden`. Interactive elements must have visible focus styles. Use semantic HTML. Add skip links for new layouts.
 9. **Follow the `className` pattern for utility classes** — use `cn()` for conditional classes. Do not introduce CSS modules or styled-components unless the pattern is established across the codebase.

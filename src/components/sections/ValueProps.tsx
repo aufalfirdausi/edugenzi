@@ -45,7 +45,7 @@ export function ValueProps() {
   return (
     <section className="mt-24 lg:mt-32">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <ScrollReveal direction="left">
               <SectionHeading
@@ -58,33 +58,33 @@ export function ValueProps() {
             </ScrollReveal>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:col-span-8">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:col-span-8">
             {props.map((p, idx) => (
               <ScrollReveal
                 key={p.title}
                 direction={idx % 2 === 0 ? "left" : "right"}
-                className={idx === 4 ? "sm:col-span-2" : ""}
+                className={idx === 4 ? "col-span-2 sm:col-span-2" : ""}
                 delay={idx * 100}
               >
-                <Card className="relative overflow-hidden p-5 sm:p-6 h-full" color="amber">
+                <Card className="relative overflow-hidden p-3 sm:p-6 h-full" color="amber">
                   <div
                     className="pointer-events-none absolute inset-0 bg-[radial-gradient(400px_200px_at_80%_20%,rgba(255,248,220,0.8),transparent_60%)]"
                     aria-hidden
                   />
-                  <div className="relative flex items-start justify-between gap-3">
-                    <div>
-                      <div className="text-base font-semibold text-[var(--ink)]">
+                  <div className={`relative flex gap-3 ${idx === 4 ? "flex-row items-center justify-between" : "flex-col-reverse sm:flex-row items-start sm:justify-between"}`}>
+                    <div className="mt-1 sm:mt-0">
+                      <div className="text-xs sm:text-base md:text-lg lg:text-xl font-semibold text-[var(--ink)] leading-tight">
                         {p.title}
                       </div>
-                      <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
+                      <p className="mt-1 sm:mt-2 text-[11px] sm:text-sm md:text-base lg:text-lg leading-relaxed text-[var(--muted)] line-clamp-2 sm:line-clamp-none">
                         {p.desc}
                       </p>
                     </div>
                     <div
-                      className="mt-1 grid size-11 shrink-0 place-items-center rounded-2xl bg-[var(--border)] ring-1 ring-[var(--border)] text-[var(--ink)]"
+                      className="grid size-8 sm:size-11 shrink-0 place-items-center rounded-lg sm:rounded-2xl bg-[var(--border)] ring-1 ring-[var(--border)] text-[var(--ink)]"
                       aria-hidden
                     >
-                      {p.icon}
+                      <div className="scale-75 sm:scale-100">{p.icon}</div>
                     </div>
                   </div>
                 </Card>

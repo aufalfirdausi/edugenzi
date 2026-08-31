@@ -48,7 +48,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <div className={cn("inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold", selectedColor.container)}>
+        <div className={cn("inline-flex items-center gap-2 rounded-full px-3 py-1 text-[10px] sm:text-xs md:text-sm font-semibold", selectedColor.container)}>
           <span
             aria-hidden
             className={cn("size-1.5 rounded-full", selectedColor.dot)}
@@ -59,7 +59,7 @@ export function SectionHeading({
 
       <h2
         className={cn(
-          "mt-4 font-[var(--font-display)] text-3xl leading-[1.05] tracking-tight text-[var(--ink)] sm:text-4xl",
+          "mt-4 font-[var(--font-display)] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-[1.05] tracking-tight text-[var(--ink)]",
           align === "center" ? "text-balance" : "text-pretty",
           titleClassName,
         )}
@@ -68,7 +68,7 @@ export function SectionHeading({
       </h2>
 
       {description ? (
-        <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+        <p className="mt-3 text-[11px] sm:text-sm md:text-base lg:text-lg leading-relaxed text-[var(--muted)]">
           {description}
         </p>
       ) : null}

@@ -13,12 +13,10 @@ export function StatsBand() {
   return (
     <section className="mt-16 sm:mt-20">
       <Container>
-        <Card className="relative overflow-hidden !rounded-none !rounded-tr-[120px]" color="amber">
-          <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_450px_at_10%_10%,rgba(255,176,0,0.18),transparent_60%),radial-gradient(900px_450px_at_90%_30%,rgba(255,176,0,0.12),transparent_60%)]"
-            aria-hidden
-          />
-          <div className="relative grid gap-10 p-6 sm:p-8 lg:grid-cols-12 lg:items-center">
+        <Card className="relative overflow-hidden !rounded-none !rounded-tr-[80px] sm:!rounded-tr-[120px]" color="amber">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_450px_at_10%_10%,rgba(255,176,0,0.18),transparent_60%),radial-gradient(900px_450px_at_90%_30%,rgba(255,176,0,0.12),transparent_60%)]" aria-hidden />
+          
+          <div className="relative grid gap-8 p-5 sm:p-8 lg:grid-cols-12 lg:items-center">
             <SectionHeading
               className="lg:col-span-4"
               eyebrow="Sekilas Tentang Edugenzi"
@@ -27,13 +25,13 @@ export function StatsBand() {
               description="Struktur belajar Edugenzi dirancang supaya progres anak jelas dari awal sampai akhir program."
             />
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:col-span-8 lg:grid-cols-4">
               {stats.map((s) => (
-                <div key={s.label} className="rounded-2xl bg-[var(--border)] p-5 ring-1 ring-[var(--border)]">
-                  <div className="font-[var(--font-display)] text-3xl tracking-tight text-[var(--ink)]">
+                <div key={s.label} className="rounded-xl sm:rounded-2xl bg-[var(--border)] p-3 sm:p-5 ring-1 ring-[var(--border)]">
+                  <div className="font-[var(--font-display)] text-xs sm:text-base md:text-lg lg:text-xl tracking-tight text-[var(--ink)]">
                     {s.value}
                   </div>
-                  <div className="mt-1 text-sm text-[var(--muted)]">{s.label}</div>
+                  <div className="mt-1 text-[11px] sm:text-sm md:text-base lg:text-lg text-[var(--muted)] leading-tight">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -43,4 +41,3 @@ export function StatsBand() {
     </section>
   );
 }
-
