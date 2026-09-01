@@ -78,7 +78,7 @@ export const CHOICES = [
 
 export function InterestQuiz() {
   const [currentStep, setCurrentStep] = useState(0); // 0 = Intro, 1 = Quiz, 2 = Result
-  
+
   // Form State
   const [parentName, setParentName] = useState("");
   const [parentWA, setParentWA] = useState("");
@@ -131,7 +131,7 @@ export function InterestQuiz() {
       console.warn("NEXT_PUBLIC_SHEETDB_URL is not defined.");
       return;
     }
-    
+
     const leadData = {
       data: [{
         "WALI": parentName,
@@ -164,7 +164,7 @@ export function InterestQuiz() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       setIsSubmitting(true);
-      
+
       const scores: Record<string, number> = {};
       CATEGORIES.forEach(c => {
         scores[c.id] = answers[c.id].reduce((a, b) => (a || 0) + (b || 0), 0) as number;
@@ -207,12 +207,12 @@ export function InterestQuiz() {
         backgroundColor: "#ffffff",
         pixelRatio: 2,
       });
-      
+
       const pdf = new jsPDF("p", "mm", "a4");
       const imgProps = pdf.getImageProperties(dataUrl);
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-      
+
       pdf.addImage(dataUrl, "PNG", 0, 0, pdfWidth, pdfHeight);
       pdf.save(`Hasil-Asesmen-Edugenzi-${childName.replace(/\s+/g, "-")}.pdf`);
     } catch (error) {
@@ -296,7 +296,7 @@ export function InterestQuiz() {
                     className="w-full min-h-[48px] rounded-xl border border-[var(--border)] px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand)]"
                   />
                 </div>
-                
+
                 <div className="flex items-start gap-3 mt-2">
                   <input
                     type="checkbox"
@@ -377,11 +377,10 @@ export function InterestQuiz() {
                             <button
                               key={choice.v}
                               onClick={() => handleChoice(cat.id, si, choice.v)}
-                              className={`w-full min-h-[48px] text-left px-4 py-3 rounded-xl border-[1.5px] text-base md:text-sm transition-all duration-200 ${
-                                isSelected 
-                                  ? "border-[var(--sel-color)] bg-slate-50 font-bold text-[var(--ink)] shadow-sm" 
+                              className={`w-full min-h-[48px] text-left px-4 py-3 rounded-xl border-[1.5px] text-base md:text-sm transition-all duration-200 ${isSelected
+                                  ? "border-[var(--sel-color)] bg-slate-50 font-bold text-[var(--ink)] shadow-sm"
                                   : "border-[var(--border)] text-[var(--muted)] hover:border-slate-300 hover:bg-slate-50"
-                              }`}
+                                }`}
                               style={{ "--sel-color": cat.hex } as React.CSSProperties}
                             >
                               {choice.t}
@@ -425,7 +424,7 @@ export function InterestQuiz() {
     CATEGORIES.forEach(c => {
       scores[c.id] = answers[c.id].reduce((a, b) => (a || 0) + (b || 0), 0) as number;
     });
-    
+
     const maxPossible = CATEGORIES[0].statements.length * 4;
     const ranked = [...CATEGORIES].sort((a, b) => scores[b.id] - scores[a.id]);
     const top = ranked[0];
@@ -433,8 +432,8 @@ export function InterestQuiz() {
     const isCombo = (scores[top.id] - scores[second.id]) <= 3;
     const ageTier = parseInt(childAge, 10) <= 12 ? "SD" : "SMP";
 
-    const insightText = ageTier === "SD" 
-      ? top.insightSD.replace(/\{name\}/g, childName) 
+    const insightText = ageTier === "SD"
+      ? top.insightSD.replace(/\{name\}/g, childName)
       : top.insightSMP.replace(/\{name\}/g, childName);
 
     const waMsg = `Halo, saya ${parentName} ingin tanya-tanya soal program Edugenzi untuk anak saya ${childName} (${childAge} tahun, ${school}). Dari hasil kuis minat & bakat, kecenderungannya di ${top.label}. Boleh info lebih lanjut?`;
@@ -444,7 +443,7 @@ export function InterestQuiz() {
       <section className="py-12 md:py-16">
         <Container>
           <div className="max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-            
+
             <div className="text-center mb-8">
               <span className="inline-block px-4 py-1.5 rounded-full bg-slate-100 text-[var(--muted)] text-xs font-bold uppercase tracking-wider mb-3">
                 Hasil Kuis
@@ -457,7 +456,7 @@ export function InterestQuiz() {
             {/* Result Card for PDF */}
             <div ref={resultCardRef} className="bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100 mb-6">
               <div className="flex items-center gap-4 mb-8">
-                <div 
+                <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0"
                   style={{ backgroundColor: `${top.hex}22` }}
                 >
@@ -483,7 +482,7 @@ export function InterestQuiz() {
                         <span>{pct}%</span>
                       </div>
                       <div className="h-2.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                        <div 
+                        <div
                           className="h-full rounded-full transition-all duration-1000"
                           style={{ width: `${pct}%`, backgroundColor: c.hex }}
                         />
@@ -541,7 +540,7 @@ export function InterestQuiz() {
                 >
                   💬 Konsultasi Gratis via WhatsApp
                 </a>
-                
+
                 <button
                   onClick={handleRestart}
                   className="w-full text-sm font-semibold text-slate-500 hover:text-slate-800 underline decoration-slate-300 underline-offset-4"

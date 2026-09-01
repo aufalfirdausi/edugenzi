@@ -30,23 +30,23 @@ export default function TentangKamiPage() {
       {/* 1. Hero Section */}
       <section className="pt-6 sm:pt-12 lg:pt-32 pb-12 lg:pb-16">
         <Container className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-12 gap-3 sm:gap-12 items-center">
+          <div className="grid grid-cols-12 gap-3 sm:gap-12 items-start">
             {/* Left Column (Typography & CTA) */}
             <ScrollReveal direction="right" className="col-span-7 md:col-span-6 flex flex-col z-10">
               <h1 className="font-[var(--font-display)] text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-slate-900 ">
                 Kenali Edugenzi<br />Lebih Dekat
               </h1>
-              <p className="mt-2 sm:mt-6 mb-36 sm:mb-40 text-[11px] sm:text-sm md:text-base lg:text-lg text-slate-500 leading-relaxed">
+              <p className="mt-2 sm:mt-6 mb-6 sm:mb-10 text-[11px] sm:text-sm md:text-base lg:text-lg text-slate-500 leading-relaxed">
                 Temukan Visi, Misi, dan Komitmen Kami Membentuk Generasi Digital yang Percaya Diri
               </p>
               <Link
                 href="#filosofi-logo"
-                className="inline-block mt-8 px-4 sm:px-8 py-2 sm:py-3 text-[10px] sm:text-base rounded-full bg-orange-500 hover:bg-orange-600 text-white font-bold transition-colors shadow-md"
+                className="inline-block w-fit px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-3 md:py-4 lg:py-5 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-orange-500 hover:bg-orange-600 text-white font-bold transition-colors shadow-md"
               >
                 Pelajari Selengkapnya
               </Link>
 
-              <div className="relative w-full max-w-[12rem] sm:max-w-xs aspect-square mt-6 sm:mt-10 mb-24 sm:mb-32 bg-white rounded-2xl sm:rounded-[40px] shadow-2xl flex items-center justify-center overflow-hidden">
+              <div className="relative w-full max-w-[12rem] sm:max-w-xs aspect-square mt-8 sm:mt-16 bg-white rounded-2xl sm:rounded-[40px] shadow-2xl flex items-center justify-center overflow-hidden">
                 <div className="relative w-full h-full">
                   <Image src="/logo-edugenzi.png" alt="Logo Edugenzi" fill className="object-contain p-4" />
                 </div>
@@ -195,7 +195,7 @@ export default function TentangKamiPage() {
                   Visi Edugenzi
                 </h2>
                 <p className="text-[11px] sm:text-sm md:text-xl lg:text-2xl leading-relaxed text-slate-700">
-                  "Menjadi ekosistem pendidikan teknologi terbaik di Aceh yang mencetak generasi muda yang kreatif, inovatif, dan siap menghadapi tantangan masa depan."
+                  "Menjadi lembaga pendidikan teknologi dan bisnis yang menumbuhkan anak Indonesia sebagai pencipta karya digital yang percaya diri, bertanggung jawab, dan siap menghadapi perubahan zaman."
                 </p>
               </div>
             </ScrollReveal>
@@ -205,35 +205,29 @@ export default function TentangKamiPage() {
                 <h2 className="font-[var(--font-display)] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-8 text-center">
                   Misi Edugenzi
                 </h2>
-                <ul className="grid grid-cols-2 gap-3 sm:gap-4">
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
                   <li className="flex gap-2 sm:gap-4 items-start">
                     <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-0.5 sm:mt-1 w-4 h-4 sm:w-6 sm:h-6" />
                     <span className="text-[11px] sm:text-sm md:text-base lg:text-lg text-slate-700 leading-relaxed">
-                      Menyediakan kurikulum berbasis proyek (Project-Based Learning) yang relevan dengan perkembangan industri.
+                      Menyelenggarakan pembelajaran teknologi berjenjang yang terukur, sesuai tahap perkembangan usia, dan berbasis proyek nyata.
                     </span>
                   </li>
                   <li className="flex gap-2 sm:gap-4 items-start">
                     <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-0.5 sm:mt-1 w-4 h-4 sm:w-6 sm:h-6" />
                     <span className="text-[11px] sm:text-sm md:text-base lg:text-lg text-slate-700 leading-relaxed">
-                      Menciptakan lingkungan belajar yang interaktif, menyenangkan, kolaboratif, dan suportif.
+                      Menghadirkan pengalaman belajar yang aman, menyenangkan, dan menghargai proses, tidak hanya hasil akhir.
                     </span>
                   </li>
                   <li className="flex gap-2 sm:gap-4 items-start">
                     <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-0.5 sm:mt-1 w-4 h-4 sm:w-6 sm:h-6" />
                     <span className="text-[11px] sm:text-sm md:text-base lg:text-lg text-slate-700 leading-relaxed">
-                      Mengembangkan bukan hanya hard skills (coding, desain) tetapi juga soft skills (komunikasi, problem solving).
+                      Membangun kemitraan dengan sekolah dan orang tua sebagai satu kesatuan ekosistem pendukung perkembangan anak.
                     </span>
                   </li>
                   <li className="flex gap-2 sm:gap-4 items-start">
                     <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-0.5 sm:mt-1 w-4 h-4 sm:w-6 sm:h-6" />
                     <span className="text-[11px] sm:text-sm md:text-base lg:text-lg text-slate-700 leading-relaxed">
-                      Mendampingi setiap anak secara personal agar mereka dapat menemukan minat dan bakat uniknya.
-                    </span>
-                  </li>
-                  <li className="flex gap-2 sm:gap-4 items-start">
-                    <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-0.5 sm:mt-1 w-4 h-4 sm:w-6 sm:h-6" />
-                    <span className="text-[11px] sm:text-sm md:text-base lg:text-lg text-slate-700 leading-relaxed">
-                      Membangun kolaborasi erat dengan orang tua untuk mengoptimalkan potensi anak di dalam dan luar kelas.
+                      Mendokumentasikan karya siswa sebagai portofolio digital yang dapat dibawa dan dikembangkan hingga jenjang pendidikan berikutnya.
                     </span>
                   </li>
                 </ul>

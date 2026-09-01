@@ -33,8 +33,8 @@ export function LearningMethods() {
 
           <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-4xl mx-auto w-full">
             {methods.map((method, idx) => (
-              <ScrollReveal 
-                key={method.title} 
+              <ScrollReveal
+                key={method.title}
                 direction="up"
                 delay={idx * 100}
                 className="h-full"

@@ -38,8 +38,7 @@ export function SiteFooter() {
         <div className="grid gap-2 text-sm text-[var(--muted)] md:col-span-4">
           <div className="font-semibold text-[var(--ink)]">Kontak</div>
           <p className="leading-relaxed">
-            Samping DIY Lingke, Jl. Teuku Nyak Arief, Jeulingke, Kec. Syiah Kuala, Kota Banda
-            Aceh, Aceh 23126
+            Jl. Teuku Nyak Arief, (samping Polda Aceh), Jeulingke, Syiah Kuala, Kota Banda Aceh
           </p>
           <a className="hover:text-[var(--ink)]" href={links.whatsapp} target="_blank" rel="noopener noreferrer">
             WhatsApp: {links.whatsappNumberDisplay}
